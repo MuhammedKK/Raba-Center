@@ -1,0 +1,44 @@
+{
+  "brand": {
+    "name": "Amal",
+    "fullName": "Amal Care"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "courses": "Programs & Courses",
+    "trainers": "Trainers",
+    "branches": "Branches",
+    "blog": "Blog",
+    "contact": "Contact Us"
+  },
+  "account": {
+    "login": "Log In",
+    "favorites": "Favorites",
+    "cart": "Cart"
+  },
+  "actions": {
+    "bookNow": "Book Now",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "submit": "Submit",
+    "close": "Close",
+    "menu": "Menu"
+  },
+  "footer": {
+    "tagline": "Training and rehabilitation services for children with developmental disorders — scientific method, human heart.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved"
+  },
+  "language": {
+    "switchTo": "العربية"
+  },
+  "placeholder": {
+    "description": "This page is scoped in the phases/ roadmap and will be fully built out in an upcoming phase.",
+    "notFoundTitle": "Page Not Found",
+    "notFoundDescription": "The link you followed doesn't exist."
+  }
+}
