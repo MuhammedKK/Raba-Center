@@ -122,7 +122,7 @@ Warm teal primary (calm, trustworthy, not clinical-cold) + amber/coral accents (
 | --- | ---------------------------------------------- | ----------- | ------------------------------------------------------------------------------ |
 | 0   | Foundation & Tooling                           | Done        | [phases/00-foundation](phases/00-foundation/README.md)                         |
 | 1   | Design System & Global Layout                  | Done        | [phases/01-design-system-layout](phases/01-design-system-layout/README.md)     |
-| 2   | Home Page                                      | Not Started | [phases/02-home-page](phases/02-home-page/README.md)                           |
+| 2   | Home Page                                      | Done        | [phases/02-home-page](phases/02-home-page/README.md)                           |
 | 3   | About Us                                       | Not Started | [phases/03-about-us](phases/03-about-us/README.md)                             |
 | 4   | Services                                       | Not Started | [phases/04-services](phases/04-services/README.md)                             |
 | 5   | Courses & Programs + Trainers                  | Not Started | [phases/05-courses-trainers](phases/05-courses-trainers/README.md)             |
@@ -141,6 +141,8 @@ Warm teal primary (calm, trustworthy, not clinical-cold) + amber/coral accents (
 - No multi-currency support — pricing shown in SAR only, matching the reference market.
 - No real geolocation for "nearest branch" — branch list is static, grouped by city.
 - Services page ships as a single page with anchor sections for v1 (not one detail page per service) to control scope; revisit in Phase 10 polish if time allows.
+- Phase 2 pulled two things forward from later phases because they were cheap and immediately valuable: a minimal `features/courses` slice (`courses.types.ts`, `useCourses`, `CourseCard`) for the home page's featured-courses section — Phase 5 extends this with filters/detail pages rather than rebuilding it — and a site-wide `PageTransition` wrapper (originally scoped to Phase 10) wired into `MainLayout`, since every page benefits from it immediately rather than waiting for the dedicated polish pass.
+- The MSW mock layer must stay active in the **production** build, not just dev (`env.useMocks`, checked in `main.tsx`) — this is a frontend-only demo with no real backend, so disabling mocks in prod (the initial, incorrect assumption) silently breaks every data-driven page. See `phases/02-home-page` Notes for the full incident.
 
 ## 10. Glossary (bilingual term consistency)
 

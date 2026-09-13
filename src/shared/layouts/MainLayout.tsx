@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Navigate, Outlet, useParams } from 'react-router'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
+import { PageTransition } from '@/shared/components/composed/PageTransition'
 import type { Locale } from '@/types/common.types'
 
 const SUPPORTED_LOCALES: Locale[] = ['ar', 'en']
@@ -25,7 +26,9 @@ export function MainLayout() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <Outlet />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
       </main>
       <Footer />
     </div>

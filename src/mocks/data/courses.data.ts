@@ -1,0 +1,48 @@
+import type { Course } from '@/features/courses/courses.types'
+
+export const coursesData: Course[] = [
+  {
+    id: 'course-abat',
+    slug: 'aba-technician',
+    title: 'items.abaTechnician',
+    category: 'aba',
+    price: 350,
+    rating: 4.5,
+    reviewCount: 128,
+    durationHours: 40,
+    image: 'aba',
+  },
+  {
+    id: 'course-supervisor',
+    slug: 'autism-service-supervisor',
+    title: 'items.autismSupervisor',
+    category: 'aba',
+    price: 1200,
+    rating: 4.8,
+    reviewCount: 64,
+    durationHours: 56,
+    image: 'supervisor',
+  },
+  {
+    id: 'course-behavior-specialist',
+    slug: 'behavior-analysis-specialist',
+    title: 'items.behaviorSpecialist',
+    category: 'aba',
+    price: 5000,
+    rating: 4.9,
+    reviewCount: 41,
+    durationHours: 120,
+    image: 'specialist',
+  },
+  {
+    id: 'course-speech-foundations',
+    slug: 'speech-language-foundations',
+    title: 'items.speechFoundations',
+    category: 'speech',
+    price: 650,
+    rating: 4.6,
+    reviewCount: 87,
+    durationHours: 32,
+    image: 'speech',
+  },
+]

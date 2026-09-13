@@ -1,0 +1,10 @@
+{
+  "items": {
+    "abaTechnician": "ABA Technician Certification",
+    "autismSupervisor": "Autism Service Supervisor",
+    "behaviorSpecialist": "Behavior Analysis Specialist",
+    "speechFoundations": "Speech & Language Foundations"
+  },
+  "duration_one": "{{count}} hour",
+  "duration_other": "{{count}} hours"
+}

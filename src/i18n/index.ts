@@ -2,12 +2,16 @@ import i18n from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 import arCommon from './locales/ar/common.json'
+import arCourses from './locales/ar/courses.json'
+import arHome from './locales/ar/home.json'
 import enCommon from './locales/en/common.json'
+import enCourses from './locales/en/courses.json'
+import enHome from './locales/en/home.json'
 import { NAMESPACES } from './namespaces'
 
 const resources = {
-  ar: { common: arCommon },
-  en: { common: enCommon },
+  ar: { common: arCommon, home: arHome, courses: arCourses },
+  en: { common: enCommon, home: enHome, courses: enCourses },
 } as const
 
 export function applyDirection(language: string) {

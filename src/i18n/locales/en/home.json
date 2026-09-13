@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "eyebrow": "Trusted pediatric ABA & developmental therapy",
+    "title": "Helping every child reach their fullest potential",
+    "subtitle": "Amal Care combines certified applied behavior analysis, speech therapy, and family-centered support to help children with developmental disorders thrive — at our centers or in your home.",
+    "primaryCta": "Book a Free Assessment",
+    "secondaryCta": "Explore Our Services",
+    "highlights": {
+      "assessment": "Individual scientific diagnosis & assessment",
+      "intervention": "Certified ABA intervention programs",
+      "support": "Psychological support & family counseling"
+    }
+  },
+  "credentials": {
+    "eyebrow": "Certified & accredited by"
+  },
+  "stats": {
+    "satisfaction": "Parent satisfaction",
+    "effectiveness": "Program effectiveness",
+    "improvement": "Child improvement rate",
+    "specialists": "Certified specialists"
+  },
+  "offers": {
+    "eyebrow": "Limited-time offers",
+    "title": "Special programs, thoughtfully priced",
+    "aba": {
+      "title": "ABA Course Bundle",
+      "description": "Save on our full applied behavior analysis certification track."
+    },
+    "homeServices": {
+      "title": "Home Services Package",
+      "description": "In-home therapy sessions in your child's natural environment."
+    },
+    "trainingBundle": {
+      "title": "Specialist Training Bundle",
+      "description": "Bundle multiple specialist certifications at a special rate."
+    }
+  },
+  "courses": {
+    "eyebrow": "Programs & courses",
+    "title": "Featured certification programs",
+    "viewAll": "View all programs"
+  },
+  "testimonials": {
+    "eyebrow": "Families we've supported",
+    "title": "What parents are saying",
+    "items": {
+      "t1": {
+        "name": "Sara A.",
+        "role": "Parent of a 6-year-old",
+        "quote": "The team's individualized plan gave our son real, measurable progress within months."
+      },
+      "t2": {
+        "name": "Faisal M.",
+        "role": "Parent of a 4-year-old",
+        "quote": "Compassionate specialists who treat every family like their own."
+      },
+      "t3": {
+        "name": "Noura K.",
+        "role": "Parent of twins",
+        "quote": "The home services program fit perfectly into our routine and made all the difference."
+      },
+      "t4": {
+        "name": "Abdullah R.",
+        "role": "Parent of an 8-year-old",
+        "quote": "Certified, professional, and genuinely invested in our child's growth."
+      }
+    }
+  },
+  "accreditations": {
+    "eyebrow": "Recognized by",
+    "title": "Accreditations & partnerships"
+  }
+}

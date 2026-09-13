@@ -1,0 +1,34 @@
+import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import { OfferCard } from './OfferCard'
+import type { Offer } from '@/features/home/home.types'
+import { AnimatedSection } from '@/shared/components/composed/AnimatedSection'
+import { SectionHeading } from '@/shared/components/composed/SectionHeading'
+
+export function OffersCarousel({ offers }: { offers: Offer[] }) {
+  const { t } = useTranslation('home')
+
+  if (offers.length === 0) return null
+
+  return (
+    <AnimatedSection className="bg-white py-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <SectionHeading eyebrow={t('offers.eyebrow')} title={t('offers.title')} />
+      </div>
+      <div className="flex snap-x snap-mandatory [scrollbar-width:none] gap-5 overflow-x-auto px-4 pb-4 sm:px-6 [&::-webkit-scrollbar]:hidden">
+        <div className="shrink-0 basis-0" aria-hidden />
+        {offers.map((offer, index) => (
+          <motion.div
+            key={offer.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <OfferCard offer={offer} />
+          </motion.div>
+        ))}
+      </div>
+    </AnimatedSection>
+  )
+}

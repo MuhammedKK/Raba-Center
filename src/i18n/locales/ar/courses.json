@@ -1,0 +1,14 @@
+{
+  "items": {
+    "abaTechnician": "شهادة فني تحليل السلوك التطبيقي",
+    "autismSupervisor": "مشرف خدمات التوحد",
+    "behaviorSpecialist": "أخصائي تحليل السلوك التطبيقي",
+    "speechFoundations": "أساسيات علاج النطق واللغة"
+  },
+  "duration_zero": "بدون ساعات",
+  "duration_one": "ساعة واحدة",
+  "duration_two": "ساعتان",
+  "duration_few": "{{count}} ساعات",
+  "duration_many": "{{count}} ساعة",
+  "duration_other": "{{count}} ساعة"
+}
