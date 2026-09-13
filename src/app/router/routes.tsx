@@ -15,6 +15,7 @@ import LoginPage from '@/pages/LoginPage'
 import NotFoundPage from '@/pages/NotFoundPage'
 import ServicesPage from '@/pages/ServicesPage'
 import TrainersPage from '@/pages/TrainersPage'
+import { AccountLayout } from '@/shared/layouts/AccountLayout'
 import { MainLayout } from '@/shared/layouts/MainLayout'
 
 export const router = createBrowserRouter([
@@ -34,9 +35,14 @@ export const router = createBrowserRouter([
       { path: routePaths.blogDetail(), element: <BlogDetailPage /> },
       { path: routePaths.contact, element: <ContactPage /> },
       { path: routePaths.login, element: <LoginPage /> },
-      { path: routePaths.favorites, element: <FavoritesPage /> },
-      { path: routePaths.cart, element: <CartPage /> },
-      { path: routePaths.checkout, element: <CheckoutPage /> },
+      {
+        element: <AccountLayout />,
+        children: [
+          { path: routePaths.favorites, element: <FavoritesPage /> },
+          { path: routePaths.cart, element: <CartPage /> },
+          { path: routePaths.checkout, element: <CheckoutPage /> },
+        ],
+      },
       { path: '*', element: <NotFoundPage /> },
     ],
   },

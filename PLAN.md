@@ -121,7 +121,7 @@ Warm teal primary (calm, trustworthy, not clinical-cold) + amber/coral accents (
 | #   | Phase                                          | Status      | Folder                                                                         |
 | --- | ---------------------------------------------- | ----------- | ------------------------------------------------------------------------------ |
 | 0   | Foundation & Tooling                           | Done        | [phases/00-foundation](phases/00-foundation/README.md)                         |
-| 1   | Design System & Global Layout                  | In Progress | [phases/01-design-system-layout](phases/01-design-system-layout/README.md)     |
+| 1   | Design System & Global Layout                  | Done        | [phases/01-design-system-layout](phases/01-design-system-layout/README.md)     |
 | 2   | Home Page                                      | Not Started | [phases/02-home-page](phases/02-home-page/README.md)                           |
 | 3   | About Us                                       | Not Started | [phases/03-about-us](phases/03-about-us/README.md)                             |
 | 4   | Services                                       | Not Started | [phases/04-services](phases/04-services/README.md)                             |

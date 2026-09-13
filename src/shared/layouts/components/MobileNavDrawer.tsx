@@ -1,9 +1,10 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { X } from 'lucide-react'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { NavMenu } from './NavMenu'
 import { useDirection } from '@/shared/hooks/useDirection'
+import { useFocusTrap } from '@/shared/hooks/useFocusTrap'
 
 interface MobileNavDrawerProps {
   isOpen: boolean
@@ -15,15 +16,7 @@ export function MobileNavDrawer({ isOpen, onClose }: MobileNavDrawerProps) {
   const direction = useDirection()
   const panelRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    if (!isOpen) return
-    panelRef.current?.focus()
-    function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') onClose()
-    }
-    document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [isOpen, onClose])
+  useFocusTrap(panelRef, isOpen, onClose)
 
   const offscreenX = direction === 'rtl' ? '100%' : '-100%'
 

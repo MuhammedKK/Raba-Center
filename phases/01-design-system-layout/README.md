@@ -2,7 +2,7 @@
 
 ## Status
 
-In Progress — core layout, primitives, and full route tree are built and verified via `npm run test:e2e`; `AccountLayout` and broader unit-test coverage across all primitives are still open.
+Done
 
 ## Business
 
@@ -16,7 +16,7 @@ As a visitor (parent, prospective client, or business stakeholder), I want a con
 
 - [x] `MainLayout` (Header + Footer + content outlet) wraps every public route
 - [x] Header includes logo, nav menu, language switcher, and a mobile nav drawer
-- [x] Mobile nav drawer opens from the correct side per direction (`inset-start` via logical properties, offscreen-X flips with `useDirection()`) and traps focus (implemented; not yet covered by a dedicated E2E assertion — see Notes)
+- [x] Mobile nav drawer opens from the correct side per direction (`inset-start` via logical properties, offscreen-X flips with `useDirection()`) and traps focus — verified in `e2e/flows/mobile-nav.spec.ts` (RTL/LTR side, Escape-to-close, focus returns to the trigger)
 - [x] `LanguageSwitcher` persists choice in `localStorage` (via i18next's `LanguageDetector` cache) and updates `dir` without a full page flash — verified in `e2e/flows/navigation.spec.ts`
 - [x] Footer includes nav links, social links, and contact info strip
 - [x] UI primitives (`Button`, `Card`, `Input`, `Select`, `Badge`, `Modal`, `Tabs`, `Skeleton`, `Toast`, `RatingStars`) exist in `shared/components/ui/`, exported from a barrel `index.ts`
@@ -32,13 +32,14 @@ A fully clickable site skeleton: every planned page is reachable through real na
 - [x] Build `Button`, `Card`, `Input`, `Select`, `Badge`, `Modal`, `Tabs`, `Skeleton`, `Toast`, `RatingStars` primitives
 - [x] Build `Header`, `Footer`, `NavMenu`, `LanguageSwitcher`, `MobileNavDrawer`
 - [x] Build `MainLayout` shell (locale-guarding: redirects to `/ar` if the `:locale` param is missing/unsupported, syncs `i18n.language` from the URL)
-- [ ] Build `AccountLayout` shell (deferred to Phase 9, once Favorites/Cart/Checkout exist to lay out)
+- [x] Build `AccountLayout` shell (sub-nav tabs for Favorites/Cart, `Outlet` for the account pages; Checkout is nested under it too but not tab-linked since it's reached from Cart, not browsed directly)
 - [x] Wire full route tree with placeholder `PageScaffold`-based pages for every planned route
-- [x] Add focus-trap + keyboard-close (`Escape`) behavior to `Modal` and `MobileNavDrawer`
-- [ ] Unit tests for primitives (only `Button.test.tsx` written so far — extend to `Card`, `Input`, `Select`, `Modal`, `Tabs`, `RatingStars`, `Toast` in a follow-up pass)
+- [x] Add focus-trap + keyboard-close (`Escape`) behavior to `Modal` and `MobileNavDrawer`, extracted into a shared `useFocusTrap` hook to avoid duplicating the trap/restore logic
+- [x] Unit tests for primitives — all of `Button`, `Card`, `Input`, `Select`, `Badge`, `Skeleton`, `Modal`, `Tabs`, `Toast`, `RatingStars` plus the new `useFocusTrap` hook now have coverage (29 tests total)
 
 ## Notes / Risks
 
 - Designing the `Card` primitive generically enough to serve ~10 later variants (service card, course card, trainer card, blog card, branch card) without prop-explosion is the key design decision in this phase — get its composition API right here. Current shape (`Card`, `Card.Media`, `Card.Body`, `Card.Footer`) is intentionally minimal; revisit if Phase 5's course card needs force it wider.
 - Language switcher must not cause a flash-of-wrong-direction on load — this bit us for real: `i18next-browser-languagedetector`'s one-time path detection ran before React Router's client-side redirect resolved, so a hard load of `/` briefly booted in the browser's language. Fixed in `MainLayout` by treating the `:locale` URL segment as the source of truth (see `phases/00-foundation` Notes for the full writeup). Any future route added outside `MainLayout`'s `:locale` subtree must re-implement this sync or reuse `MainLayout`.
-- Mobile nav drawer focus-trap and RTL-slide-direction are implemented but only manually reasoned about, not yet asserted by an E2E test — worth a dedicated spec before Phase 11's accessibility pass rather than leaving it as the first thing discovered broken there.
+- **Found while writing the E2E spec**: `MobileNavDrawer` never actually implemented a focus trap or focus-restore — it only closed on `Escape`, unlike `Modal` which had the full Tab-cycling/restore logic. The phase doc had claimed "traps focus correctly" before this was true. Fixed by extracting `Modal`'s trap logic into a shared `shared/hooks/useFocusTrap.ts` hook and using it in both `Modal` and `MobileNavDrawer`, so the behavior can't drift apart between the two again. Covered by `useFocusTrap.test.tsx` (unit) and `e2e/flows/mobile-nav.spec.ts` (RTL/LTR side + focus-restore-to-trigger, real browser).
+- `AccountLayout` currently only provides a Favorites/Cart tab strip; it does not yet gate access behind auth (no `AuthGuard` exists until Phase 9) — anyone can currently reach `/ar/favorites` or `/ar/cart` directly, which is expected for this stage but should not be mistaken for the finished access-control story.
