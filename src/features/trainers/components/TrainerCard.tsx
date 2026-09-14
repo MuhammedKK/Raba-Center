@@ -1,18 +1,18 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { Link, useParams } from 'react-router'
-import behaviorImage from '@/assets/images/team/team-behavior.jpg'
-import leadImage from '@/assets/images/team/team-lead.jpg'
-import occupationalImage from '@/assets/images/team/team-occupational.jpg'
-import speechImage from '@/assets/images/team/team-speech.jpg'
+import ahmedImage from '@/assets/images/trainers/ahmed-abu-zaid.png'
+import dohaImage from '@/assets/images/trainers/doha-khaled.png'
+import hanaaImage from '@/assets/images/trainers/hanaa-bashir.png'
+import hishamImage from '@/assets/images/trainers/hisham-salama.png'
 import type { Trainer } from '@/features/trainers/trainers.types'
-import { Card } from '@/shared/components/ui'
+import { Card, RatingStars } from '@/shared/components/ui'
 
 const imageByTrainer: Record<Trainer['photo'], string> = {
-  lead: leadImage,
-  behavior: behaviorImage,
-  speech: speechImage,
-  occupational: occupationalImage,
+  hanaa: hanaaImage,
+  ahmed: ahmedImage,
+  hisham: hishamImage,
+  doha: dohaImage,
 }
 
 export function TrainerCard({ trainer }: { trainer: Trainer }) {
@@ -37,8 +37,11 @@ export function TrainerCard({ trainer }: { trainer: Trainer }) {
             <p className="text-primary-700 dark:text-primary-300 mt-1 text-sm font-semibold">
               {t(trainer.role)}
             </p>
-            <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-              {t(trainer.credentials)}
+            {typeof trainer.rating === 'number' && (
+              <RatingStars value={trainer.rating} className="mt-2" />
+            )}
+            <p className="mt-2 line-clamp-2 text-sm text-neutral-500 dark:text-neutral-400">
+              {t(trainer.bio)}
             </p>
             <span className="text-primary-600 dark:text-primary-400 mt-4 inline-block text-sm font-semibold hover:underline">
               {t('viewProfile')}

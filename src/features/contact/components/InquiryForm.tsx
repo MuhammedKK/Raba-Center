@@ -10,7 +10,7 @@ import {
 } from '@/features/contact/schemas/inquiryForm.schema'
 import { Button, Input } from '@/shared/components/ui'
 
-export function InquiryForm() {
+export function InquiryForm({ defaultTrainerName }: { defaultTrainerName?: string }) {
   const { t } = useTranslation('contact')
   const [isSubmitted, setIsSubmitted] = useState(false)
   const schema = useMemo(() => createInquiryFormSchema(t), [t])
@@ -23,7 +23,7 @@ export function InquiryForm() {
   } = useForm<InquiryFormValues>({ resolver: zodResolver(schema) })
 
   async function onSubmit(values: InquiryFormValues) {
-    await contactApi.submitInquiry(values)
+    await contactApi.submitInquiry({ ...values, trainerName: defaultTrainerName })
     setIsSubmitted(true)
     reset()
   }
@@ -43,6 +43,11 @@ export function InquiryForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5" noValidate>
+      {defaultTrainerName && (
+        <p className="bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300 rounded-lg px-4 py-2.5 text-sm font-medium">
+          {t('selectedTrainer', { name: defaultTrainerName })}
+        </p>
+      )}
       <Input label={t('fields.name')} error={errors.name?.message} {...register('name')} />
       <Input
         label={t('fields.email')}

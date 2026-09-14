@@ -1,18 +1,20 @@
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { Link, useParams } from 'react-router'
-import behaviorImage from '@/assets/images/team/team-behavior.jpg'
-import leadImage from '@/assets/images/team/team-lead.jpg'
-import occupationalImage from '@/assets/images/team/team-occupational.jpg'
-import speechImage from '@/assets/images/team/team-speech.jpg'
+import ahmedImage from '@/assets/images/trainers/ahmed-abu-zaid.png'
+import dohaImage from '@/assets/images/trainers/doha-khaled.png'
+import hanaaImage from '@/assets/images/trainers/hanaa-bashir.png'
+import hishamImage from '@/assets/images/trainers/hisham-salama.png'
 import { useTrainer } from '@/features/trainers/hooks/useTrainer'
 import type { Trainer } from '@/features/trainers/trainers.types'
-import { Skeleton } from '@/shared/components/ui'
+import NotFoundPage from '@/pages/NotFoundPage'
+import { Button, RatingStars, Spinner } from '@/shared/components/ui'
 
 const imageByTrainer: Record<Trainer['photo'], string> = {
-  lead: leadImage,
-  behavior: behaviorImage,
-  speech: speechImage,
-  occupational: occupationalImage,
+  hanaa: hanaaImage,
+  ahmed: ahmedImage,
+  hisham: hishamImage,
+  doha: dohaImage,
 }
 
 export default function TrainerDetailPage() {
@@ -21,31 +23,20 @@ export default function TrainerDetailPage() {
   const { trainer, isLoading, notFound } = useTrainer(slug)
 
   if (notFound) {
-    return (
-      <div className="mx-auto max-w-6xl px-4 py-24 text-center sm:px-6">
-        <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-50">
-          {t('detail.notFound')}
-        </h1>
-        <Link
-          to={`/${locale}/trainers`}
-          className="text-primary-600 dark:text-primary-400 mt-4 inline-block font-semibold"
-        >
-          {t('list.eyebrow')}
-        </Link>
-      </div>
-    )
+    return <NotFoundPage />
   }
 
   if (isLoading || !trainer) {
-    return (
-      <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-        <Skeleton className="h-72 w-full" />
-      </div>
-    )
+    return <Spinner className="py-32" />
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+    <motion.div
+      className="mx-auto max-w-3xl px-4 py-16 sm:px-6"
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+    >
       <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:items-start sm:text-start">
         <img
           src={imageByTrainer[trainer.photo]}
@@ -60,16 +51,49 @@ export default function TrainerDetailPage() {
           <p className="text-primary-700 dark:text-primary-300 mt-1 font-semibold">
             {t(trainer.role)}
           </p>
-          <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-            {t(trainer.credentials)}
-          </p>
+          {typeof trainer.rating === 'number' && (
+            <div className="mt-2 flex items-center justify-center gap-2 sm:justify-start">
+              <RatingStars value={trainer.rating} />
+              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                {trainer.rating.toFixed(1)}
+              </span>
+            </div>
+          )}
         </div>
       </div>
 
-      <div className="mt-8">
-        <h2 className="font-bold text-neutral-900 dark:text-neutral-50">{t(trainer.specialty)}</h2>
-        <p className="mt-3 text-neutral-700 dark:text-neutral-400">{t(trainer.bio)}</p>
+      <div className="mt-10 flex flex-col gap-8">
+        <section>
+          <h2 className="font-bold text-neutral-900 dark:text-neutral-50">{t('detail.about')}</h2>
+          <p className="mt-3 text-neutral-700 dark:text-neutral-400">{t(trainer.bio)}</p>
+        </section>
+
+        {trainer.qualifications && (
+          <section>
+            <h2 className="font-bold text-neutral-900 dark:text-neutral-50">
+              {t('detail.qualifications')}
+            </h2>
+            <p className="mt-3 text-neutral-700 dark:text-neutral-400">
+              {t(trainer.qualifications)}
+            </p>
+          </section>
+        )}
+
+        {trainer.experience && (
+          <section>
+            <h2 className="font-bold text-neutral-900 dark:text-neutral-50">
+              {t('detail.experience')}
+            </h2>
+            <p className="mt-3 text-neutral-700 dark:text-neutral-400">{t(trainer.experience)}</p>
+          </section>
+        )}
       </div>
-    </div>
+
+      <div className="mt-12 flex justify-center sm:justify-start">
+        <Link to={`/${locale}/contact?trainer=${trainer.slug}`}>
+          <Button size="lg">{t('detail.registerCta')}</Button>
+        </Link>
+      </div>
+    </motion.div>
   )
 }

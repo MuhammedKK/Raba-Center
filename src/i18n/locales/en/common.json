@@ -53,6 +53,8 @@
   "placeholder": {
     "description": "This page is scoped in the phases/ roadmap and will be fully built out in an upcoming phase.",
     "notFoundTitle": "Page Not Found",
-    "notFoundDescription": "The link you followed doesn't exist."
-  }
+    "notFoundDescription": "Sorry, the page you're looking for doesn't exist.",
+    "notFoundCta": "Back to Homepage"
+  },
+  "loading": "Loading..."
 }
