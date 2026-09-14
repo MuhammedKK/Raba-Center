@@ -29,6 +29,9 @@
     "demoMode": "وضع تجريبي",
     "demoModeNotice": "عملية الدفع هذه تجريبية — لا تتم معالجة أي دفعة حقيقية ولا يتم حفظ بيانات البطاقة.",
     "addressLabel": "عنوان التوصيل / الفوترة",
+    "cardBrandLabel": "نوع البطاقة",
+    "cardBrandVisa": "فيزا",
+    "cardBrandMastercard": "ماستركارد",
     "cardNumberLabel": "رقم البطاقة",
     "expiryLabel": "تاريخ الانتهاء",
     "cvcLabel": "رمز التحقق CVC",
@@ -38,9 +41,23 @@
     "backHome": "العودة للرئيسية",
     "errors": {
       "addressRequired": "يرجى إدخال العنوان.",
-      "cardNumberInvalid": "يرجى إدخال رقم بطاقة صحيح مكوّن من 16 رقمًا.",
+      "cardBrandRequired": "يرجى اختيار نوع البطاقة.",
+      "cardNumberInvalid": "يرجى إدخال رقم بطاقة صحيح مطابق لنوع البطاقة المختار.",
       "expiryInvalid": "يرجى إدخال تاريخ انتهاء صحيح (MM/YY).",
       "cvcInvalid": "يرجى إدخال رمز تحقق صحيح مكوّن من 3 أو 4 أرقام."
     }
+  },
+  "profile": {
+    "title": "ملفي الشخصي",
+    "accountDetails": "بيانات الحساب",
+    "nameLabel": "الاسم",
+    "emailLabel": "البريد الإلكتروني",
+    "favoritesTitle": "البرامج المحفوظة",
+    "favoritesEmpty": "لم تقم بحفظ أي برامج بعد.",
+    "ordersTitle": "سجل الطلبات",
+    "ordersEmpty": "لم تقم بإتمام أي طلبات بعد.",
+    "orderPlacedOn": "تم الطلب في {{date}}",
+    "orderTotal": "الإجمالي",
+    "orderItem": "{{name}} ×{{quantity}}"
   }
 }

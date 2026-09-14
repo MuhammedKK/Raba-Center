@@ -14,6 +14,7 @@ export const routePaths = {
   favorites: 'favorites',
   cart: 'cart',
   checkout: 'checkout',
+  profile: 'profile',
 } as const
 
 export function localizedPath(locale: string, path: string) {

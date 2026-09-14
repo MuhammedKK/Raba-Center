@@ -7,6 +7,8 @@ export const offersData: Offer[] = [
     description: 'offers.aba.description',
     discountLabel: '50%',
     image: 'aba',
+    link: { type: 'course', courseId: 'course-abat' },
+    discountPercent: 50,
   },
   {
     id: 'offer-home-services',
@@ -14,6 +16,7 @@ export const offersData: Offer[] = [
     description: 'offers.homeServices.description',
     discountLabel: '50%',
     image: 'homeServices',
+    link: { type: 'contact', service: 'home-services' },
   },
   {
     id: 'offer-training-bundle',
@@ -21,5 +24,7 @@ export const offersData: Offer[] = [
     description: 'offers.trainingBundle.description',
     discountLabel: '30%',
     image: 'trainingBundle',
+    link: { type: 'course', courseId: 'course-supervisor' },
+    discountPercent: 30,
   },
 ]

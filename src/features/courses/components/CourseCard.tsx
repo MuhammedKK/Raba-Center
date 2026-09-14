@@ -7,6 +7,7 @@ import supervisorImage from '@/assets/images/courses/course-autism-supervisor.jp
 import specialistImage from '@/assets/images/courses/course-behavior-specialist.jpg'
 import speechImage from '@/assets/images/courses/course-speech-foundations.jpg'
 import type { Course } from '@/features/courses/courses.types'
+import { getCourseDiscountPercent, getDiscountedPrice } from '@/features/courses/courses.utils'
 import { FavoriteButton } from '@/shared/components/composed/FavoriteButton'
 import { Card, RatingStars } from '@/shared/components/ui'
 import { formatCurrency } from '@/shared/utils/formatCurrency'
@@ -22,6 +23,8 @@ const imageByCourse: Record<Course['image'], string> = {
 export function CourseCard({ course }: { course: Course }) {
   const { t } = useTranslation('courses')
   const { locale = 'ar' } = useParams<{ locale: string }>()
+  const discountedPrice = getDiscountedPrice(course)
+  const discountPercent = getCourseDiscountPercent(course.id)
 
   return (
     <motion.div whileHover={{ y: -6 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
@@ -35,7 +38,16 @@ export function CourseCard({ course }: { course: Course }) {
               className="size-full object-cover"
               loading="lazy"
             />
-            <FavoriteButton id={course.id} className="absolute end-3 top-3" />
+            {discountPercent && (
+              <span className="bg-hope-500 absolute start-3 top-3 rounded-full px-2.5 py-1 text-xs font-bold text-white shadow-sm">
+                -{discountPercent}%
+              </span>
+            )}
+            <FavoriteButton
+              id={course.id}
+              name={t(course.title)}
+              className="absolute end-3 top-3"
+            />
           </Card.Media>
           <Card.Body>
             <h3 className="line-clamp-2 min-h-12 font-semibold text-neutral-900 dark:text-neutral-50">
@@ -52,9 +64,20 @@ export function CourseCard({ course }: { course: Course }) {
           </Card.Body>
         </Link>
         <Card.Footer>
-          <span className="text-primary-700 dark:text-primary-300 text-lg font-bold">
-            {formatCurrency(course.price, locale as Locale)}
-          </span>
+          {discountPercent ? (
+            <span className="flex items-baseline gap-2">
+              <span className="text-primary-700 dark:text-primary-300 text-lg font-bold">
+                {formatCurrency(discountedPrice, locale as Locale)}
+              </span>
+              <span className="text-sm text-neutral-400 line-through">
+                {formatCurrency(course.price, locale as Locale)}
+              </span>
+            </span>
+          ) : (
+            <span className="text-primary-700 dark:text-primary-300 text-lg font-bold">
+              {formatCurrency(course.price, locale as Locale)}
+            </span>
+          )}
         </Card.Footer>
       </Card>
     </motion.div>

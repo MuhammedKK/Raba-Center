@@ -7,6 +7,7 @@ import specialistImage from '@/assets/images/courses/course-behavior-specialist.
 import speechImage from '@/assets/images/courses/course-speech-foundations.jpg'
 import { useCartStore } from '@/features/cart/store/useCartStore'
 import type { Course } from '@/features/courses/courses.types'
+import { getCourseDiscountPercent, getDiscountedPrice } from '@/features/courses/courses.utils'
 import { useCourses } from '@/features/courses/hooks/useCourses'
 import { Button } from '@/shared/components/ui'
 import { formatCurrency } from '@/shared/utils/formatCurrency'
@@ -34,7 +35,7 @@ export default function CartPage() {
     )
 
   const subtotal = lineItems.reduce(
-    (sum, { item, course }) => sum + item.quantity * course.price,
+    (sum, { item, course }) => sum + item.quantity * getDiscountedPrice(course),
     0,
   )
 
@@ -67,9 +68,20 @@ export default function CartPage() {
               <h3 className="truncate font-semibold text-neutral-900 dark:text-neutral-50">
                 {t(course.title)}
               </h3>
-              <p className="text-primary-700 dark:text-primary-300 mt-1 font-bold">
-                {formatCurrency(course.price, locale as Locale)}
-              </p>
+              {getCourseDiscountPercent(course.id) ? (
+                <p className="mt-1 flex items-baseline gap-2">
+                  <span className="text-primary-700 dark:text-primary-300 font-bold">
+                    {formatCurrency(getDiscountedPrice(course), locale as Locale)}
+                  </span>
+                  <span className="text-sm text-neutral-400 line-through">
+                    {formatCurrency(course.price, locale as Locale)}
+                  </span>
+                </p>
+              ) : (
+                <p className="text-primary-700 dark:text-primary-300 mt-1 font-bold">
+                  {formatCurrency(course.price, locale as Locale)}
+                </p>
+              )}
             </div>
 
             <div className="flex items-center gap-2">

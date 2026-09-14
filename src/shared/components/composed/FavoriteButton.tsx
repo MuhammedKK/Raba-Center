@@ -2,12 +2,22 @@ import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useFavoritesStore } from '@/features/favorites/store/useFavoritesStore'
+import { useToast } from '@/shared/components/ui'
 import { cn } from '@/shared/utils/cn'
 
-export function FavoriteButton({ id, className }: { id: string; className?: string }) {
+export function FavoriteButton({
+  id,
+  name,
+  className,
+}: {
+  id: string
+  name: string
+  className?: string
+}) {
   const { t } = useTranslation()
   const isFavorite = useFavoritesStore((state) => state.isFavorite(id))
   const toggleFavorite = useFavoritesStore((state) => state.toggleFavorite)
+  const { showToast } = useToast()
 
   return (
     <motion.button
@@ -17,6 +27,9 @@ export function FavoriteButton({ id, className }: { id: string; className?: stri
         event.preventDefault()
         event.stopPropagation()
         toggleFavorite(id)
+        if (!isFavorite) {
+          showToast(t('actions.addedToFavoritesToast', { name }), 'success')
+        }
       }}
       aria-pressed={isFavorite}
       aria-label={t(isFavorite ? 'actions.removeFromFavorites' : 'actions.addToFavorites')}

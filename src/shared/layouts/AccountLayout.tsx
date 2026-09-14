@@ -6,6 +6,7 @@ import { cn } from '@/shared/utils/cn'
 const accountNavItems = [
   { key: 'favorites', path: routePaths.favorites },
   { key: 'cart', path: routePaths.cart },
+  { key: 'profile', path: routePaths.profile },
 ] as const
 
 export function AccountLayout() {

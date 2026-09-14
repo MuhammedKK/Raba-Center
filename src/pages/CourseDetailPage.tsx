@@ -10,6 +10,7 @@ import { useCartStore } from '@/features/cart/store/useCartStore'
 import { CourseCurriculumList } from '@/features/courses/components/CourseCurriculumList'
 import { TrainerRefCard } from '@/features/courses/components/TrainerRefCard'
 import type { Course } from '@/features/courses/courses.types'
+import { getCourseDiscountPercent, getDiscountedPrice } from '@/features/courses/courses.utils'
 import { useCourse } from '@/features/courses/hooks/useCourse'
 import { useTrainers } from '@/features/trainers/hooks/useTrainers'
 import { FavoriteButton } from '@/shared/components/composed/FavoriteButton'
@@ -59,6 +60,8 @@ export default function CourseDetailPage() {
 
   const trainer = trainers.find((item) => item.id === course.trainerId)
   const courseId = course.id
+  const discountedPrice = getDiscountedPrice(course)
+  const discountPercent = getCourseDiscountPercent(course.id)
 
   function handleEnroll() {
     if (!isAuthenticated) return
@@ -76,7 +79,7 @@ export default function CourseDetailPage() {
             aria-hidden
             className="size-full object-cover"
           />
-          <FavoriteButton id={course.id} className="absolute end-4 top-4" />
+          <FavoriteButton id={course.id} name={t(course.title)} className="absolute end-4 top-4" />
         </div>
 
         <div>
@@ -95,8 +98,20 @@ export default function CourseDetailPage() {
           </div>
 
           <div className="mt-6 flex items-center justify-between rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
-            <span className="text-primary-700 dark:text-primary-300 text-2xl font-bold">
-              {formatCurrency(course.price, locale as Locale)}
+            <span className="flex items-baseline gap-2">
+              <span className="text-primary-700 dark:text-primary-300 text-2xl font-bold">
+                {formatCurrency(discountedPrice, locale as Locale)}
+              </span>
+              {discountPercent && (
+                <>
+                  <span className="text-base text-neutral-400 line-through">
+                    {formatCurrency(course.price, locale as Locale)}
+                  </span>
+                  <span className="bg-hope-500 rounded-full px-2 py-0.5 text-xs font-bold text-white">
+                    -{discountPercent}%
+                  </span>
+                </>
+              )}
             </span>
             {isAuthenticated ? (
               <Button size="lg" onClick={handleEnroll}>

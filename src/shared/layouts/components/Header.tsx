@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { MobileNavDrawer } from './MobileNavDrawer'
 import { NavMenu } from './NavMenu'
+import { LogoutConfirmModal } from '@/features/auth/components/LogoutConfirmModal'
 import { useAuthStore } from '@/features/auth/store/useAuthStore'
 import { useCartStore } from '@/features/cart/store/useCartStore'
 import { Logo } from '@/shared/components/composed/Logo'
@@ -14,6 +15,7 @@ export function Header() {
   const { t } = useTranslation()
   const { locale } = useParams<{ locale: string }>()
   const [isDrawerOpen, setDrawerOpen] = useState(false)
+  const [isLogoutModalOpen, setLogoutModalOpen] = useState(false)
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
   const user = useAuthStore((state) => state.user)
   const logout = useAuthStore((state) => state.logout)
@@ -51,20 +53,29 @@ export function Header() {
             )}
           </Link>
           {isAuthenticated ? (
-            <button
-              type="button"
-              onClick={logout}
-              aria-label={t('account.logout')}
-              title={user?.name}
-              className="hidden items-center gap-1.5 rounded-full p-2 text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-900 sm:inline-flex"
-            >
-              <LogOut className="size-5" aria-hidden />
-            </button>
+            <>
+              <Link
+                to={`/${locale}/profile`}
+                aria-label={t('account.profile')}
+                title={user?.name}
+                className="hidden rounded-full p-2 text-neutral-700 hover:bg-neutral-100 sm:inline-flex dark:text-neutral-300 dark:hover:bg-neutral-900"
+              >
+                <UserRound className="size-5" aria-hidden />
+              </Link>
+              <button
+                type="button"
+                onClick={() => setLogoutModalOpen(true)}
+                aria-label={t('account.logout')}
+                className="hidden items-center gap-1.5 rounded-full p-2 text-neutral-700 hover:bg-neutral-100 sm:inline-flex dark:text-neutral-300 dark:hover:bg-neutral-900"
+              >
+                <LogOut className="size-5" aria-hidden />
+              </button>
+            </>
           ) : (
             <Link
               to={`/${locale}/login`}
               aria-label={t('account.login')}
-              className="hidden rounded-full p-2 text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-900 sm:inline-flex"
+              className="hidden rounded-full p-2 text-neutral-700 hover:bg-neutral-100 sm:inline-flex dark:text-neutral-300 dark:hover:bg-neutral-900"
             >
               <UserRound className="size-5" aria-hidden />
             </Link>
@@ -73,13 +84,18 @@ export function Header() {
             type="button"
             aria-label={t('actions.menu')}
             onClick={() => setDrawerOpen(true)}
-            className="rounded-full p-2 text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-900 md:hidden"
+            className="rounded-full p-2 text-neutral-700 hover:bg-neutral-100 md:hidden dark:text-neutral-300 dark:hover:bg-neutral-900"
           >
             <Menu className="size-5" aria-hidden />
           </button>
         </div>
       </div>
       <MobileNavDrawer isOpen={isDrawerOpen} onClose={() => setDrawerOpen(false)} />
+      <LogoutConfirmModal
+        isOpen={isLogoutModalOpen}
+        onClose={() => setLogoutModalOpen(false)}
+        onConfirm={logout}
+      />
     </header>
   )
 }

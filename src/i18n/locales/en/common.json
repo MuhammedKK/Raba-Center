@@ -17,7 +17,10 @@
     "login": "Log In",
     "logout": "Log Out",
     "favorites": "Favorites",
-    "cart": "Cart"
+    "cart": "Cart",
+    "profile": "Profile",
+    "logoutConfirmTitle": "Log out",
+    "logoutConfirmMessage": "Are you sure you want to log out?"
   },
   "actions": {
     "bookNow": "Book Now",
@@ -26,8 +29,11 @@
     "submit": "Submit",
     "close": "Close",
     "menu": "Menu",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
     "addToFavorites": "Add to favorites",
     "removeFromFavorites": "Remove from favorites",
+    "addedToFavoritesToast": "Added \"{{name}}\" to your favorites",
     "whatsappTooltip": "Chat with us on WhatsApp"
   },
   "footer": {

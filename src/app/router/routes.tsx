@@ -14,6 +14,7 @@ import FavoritesPage from '@/pages/FavoritesPage'
 import HomePage from '@/pages/HomePage'
 import LoginPage from '@/pages/LoginPage'
 import NotFoundPage from '@/pages/NotFoundPage'
+import ProfilePage from '@/pages/ProfilePage'
 import ServicesPage from '@/pages/ServicesPage'
 import TrainerDetailPage from '@/pages/TrainerDetailPage'
 import TrainersPage from '@/pages/TrainersPage'
@@ -55,6 +56,14 @@ export const router = createBrowserRouter([
             element: (
               <AuthGuard>
                 <CheckoutPage />
+              </AuthGuard>
+            ),
+          },
+          {
+            path: routePaths.profile,
+            element: (
+              <AuthGuard>
+                <ProfilePage />
               </AuthGuard>
             ),
           },

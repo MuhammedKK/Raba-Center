@@ -8,9 +8,11 @@ import {
 import { Tag } from 'lucide-react'
 import type { PointerEvent } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link, useParams } from 'react-router'
 import abaImage from '@/assets/images/offers/offer-aba-bundle.jpg'
 import homeServicesImage from '@/assets/images/offers/offer-home-services.jpg'
 import trainingBundleImage from '@/assets/images/offers/offer-training-bundle.jpg'
+import { useCourses } from '@/features/courses/hooks/useCourses'
 import type { Offer } from '@/features/home/home.types'
 
 const imageByOffer: Record<Offer['image'], string> = {
@@ -19,8 +21,20 @@ const imageByOffer: Record<Offer['image'], string> = {
   trainingBundle: trainingBundleImage,
 }
 
+function useOfferHref(offer: Offer, locale: string) {
+  const { courses } = useCourses()
+  const link = offer.link
+  if (link.type === 'contact') {
+    return `/${locale}/contact?service=${link.service}`
+  }
+  const course = courses.find((item) => item.id === link.courseId)
+  return course ? `/${locale}/courses/${course.slug}` : `/${locale}/courses`
+}
+
 export function OfferCard({ offer }: { offer: Offer }) {
   const { t } = useTranslation('home')
+  const { locale = 'ar' } = useParams<{ locale: string }>()
+  const href = useOfferHref(offer, locale)
   const prefersReducedMotion = useReducedMotion()
 
   const rotateX = useSpring(useMotionValue(0), { stiffness: 300, damping: 20 })
@@ -48,24 +62,26 @@ export function OfferCard({ offer }: { offer: Offer }) {
       style={{ transform: prefersReducedMotion ? undefined : transform }}
       className="relative h-80 [width:min(80vw,320px)] shrink-0 snap-start overflow-hidden rounded-2xl shadow-lg"
     >
-      <img
-        src={imageByOffer[offer.image]}
-        alt=""
-        aria-hidden
-        className="absolute inset-0 size-full object-cover"
-        loading="lazy"
-      />
-      <div className="via-secondary-700/60 from-secondary-700 absolute inset-0 bg-gradient-to-t to-black/10" />
+      <Link to={href} className="absolute inset-0 block" aria-label={t(offer.title)}>
+        <img
+          src={imageByOffer[offer.image]}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 size-full object-cover"
+          loading="lazy"
+        />
+        <div className="via-secondary-700/60 from-secondary-700 absolute inset-0 bg-gradient-to-t to-black/10" />
 
-      <span className="from-accent-500 to-hope-500 absolute end-4 top-4 flex size-16 items-center justify-center rounded-full bg-gradient-to-br text-lg font-extrabold text-white shadow-lg ring-2 ring-white/40">
-        {offer.discountLabel}
-      </span>
+        <span className="from-accent-500 to-hope-500 absolute end-4 top-4 flex size-16 items-center justify-center rounded-full bg-gradient-to-br text-lg font-extrabold text-white shadow-lg ring-2 ring-white/40">
+          {offer.discountLabel}
+        </span>
 
-      <div className="absolute inset-x-0 bottom-0 p-6">
-        <Tag className="text-accent-400 mb-3 size-7" aria-hidden />
-        <h3 className="text-lg font-bold text-white">{t(offer.title)}</h3>
-        <p className="mt-2 text-sm text-white/85">{t(offer.description)}</p>
-      </div>
+        <div className="absolute inset-x-0 bottom-0 p-6">
+          <Tag className="text-accent-400 mb-3 size-7" aria-hidden />
+          <h3 className="text-lg font-bold text-white">{t(offer.title)}</h3>
+          <p className="mt-2 text-sm text-white/85">{t(offer.description)}</p>
+        </div>
+      </Link>
     </motion.div>
   )
 }

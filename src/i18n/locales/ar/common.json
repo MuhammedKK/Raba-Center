@@ -17,7 +17,10 @@
     "login": "تسجيل الدخول",
     "logout": "تسجيل الخروج",
     "favorites": "المفضلة",
-    "cart": "السلة"
+    "cart": "السلة",
+    "profile": "الملف الشخصي",
+    "logoutConfirmTitle": "تسجيل الخروج",
+    "logoutConfirmMessage": "هل أنت متأكد أنك تريد تسجيل الخروج؟"
   },
   "actions": {
     "bookNow": "احجز الآن",
@@ -26,8 +29,11 @@
     "submit": "إرسال",
     "close": "إغلاق",
     "menu": "القائمة",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
     "addToFavorites": "أضف إلى المفضلة",
     "removeFromFavorites": "إزالة من المفضلة",
+    "addedToFavoritesToast": "تمت إضافة \"{{name}}\" إلى المفضلة",
     "whatsappTooltip": "تواصل معنا عبر واتساب"
   },
   "footer": {
