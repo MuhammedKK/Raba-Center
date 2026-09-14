@@ -5,10 +5,11 @@ import { HeroSection } from '@/features/home/components/HeroSection'
 import { OffersCarousel } from '@/features/home/components/OffersCarousel'
 import { StatsSection } from '@/features/home/components/StatsSection'
 import { TestimonialsCarousel } from '@/features/home/components/TestimonialsCarousel'
+import { TrainersCarousel } from '@/features/home/components/TrainersCarousel'
 import { useHomeData } from '@/features/home/hooks/useHomeData'
 
 export default function HomePage() {
-  const { stats, offers, featuredCourses, testimonials, credentials, accreditations } =
+  const { stats, offers, featuredCourses, testimonials, credentials, accreditations, trainers } =
     useHomeData()
 
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <StatsSection stats={stats} />
       <OffersCarousel offers={offers} />
       <FeaturedCourses courses={featuredCourses} />
+      <TrainersCarousel trainers={trainers} />
       <TestimonialsCarousel testimonials={testimonials} />
       <AccreditationsSection accreditations={accreditations} />
     </div>
