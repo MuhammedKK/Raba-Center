@@ -34,7 +34,7 @@ function Tabs({ defaultValue, children, className }: TabsProps) {
 
 function TabsList({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <div role="tablist" className={cn('flex gap-2 border-b border-neutral-200', className)}>
+    <div role="tablist" className={cn('flex gap-2 border-b border-neutral-200 dark:border-neutral-800', className)}>
       {children}
     </div>
   )
@@ -53,8 +53,8 @@ function TabsTrigger({ value, children }: { value: string; children: ReactNode }
       className={cn(
         '-mb-px border-b-2 px-4 py-2.5 text-sm font-medium transition-colors',
         isActive
-          ? 'border-primary-500 text-primary-700'
-          : 'border-transparent text-neutral-400 hover:text-neutral-700',
+          ? 'border-primary-500 text-primary-700 dark:border-primary-400 dark:text-primary-300'
+          : 'border-transparent text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200',
       )}
     >
       {children}

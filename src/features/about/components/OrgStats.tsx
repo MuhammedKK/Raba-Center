@@ -13,7 +13,7 @@ export function OrgStats({ stats }: { stats: OrgStat[] }) {
   if (featured.length === 0) return null
 
   return (
-    <AnimatedSection className="border-y border-neutral-200 bg-neutral-50/50 py-16 backdrop-blur-sm">
+    <AnimatedSection className="border-y border-neutral-200 bg-neutral-50/50 py-16 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/40">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading align="center" eyebrow={t('stats.eyebrow')} title={t('stats.title')} />
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">

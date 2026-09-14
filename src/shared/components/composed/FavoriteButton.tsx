@@ -21,7 +21,7 @@ export function FavoriteButton({ id, className }: { id: string; className?: stri
       aria-pressed={isFavorite}
       aria-label={t(isFavorite ? 'actions.removeFromFavorites' : 'actions.addToFavorites')}
       className={cn(
-        'hover:text-hope-500 flex size-9 items-center justify-center rounded-full bg-white/90 text-neutral-500 shadow-sm ring-1 ring-neutral-200 transition-colors',
+        'hover:text-hope-500 flex size-9 items-center justify-center rounded-full bg-white/90 text-neutral-500 shadow-sm ring-1 ring-neutral-200 transition-colors dark:bg-neutral-900/90 dark:text-neutral-400 dark:ring-neutral-700',
         isFavorite && 'text-hope-500',
         className,
       )}

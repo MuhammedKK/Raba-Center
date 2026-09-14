@@ -11,7 +11,7 @@ export function StatsSection({ stats }: { stats: OrgStat[] }) {
   const { t } = useTranslation('home')
 
   return (
-    <AnimatedSection className="border-y border-neutral-200 bg-white/50 py-14 backdrop-blur-sm">
+    <AnimatedSection className="border-y border-neutral-200 bg-white/50 py-14 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-950/50">
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-4 sm:px-6 md:grid-cols-4">
         {stats.map((stat) => (
           <AnimatedStatsCounter

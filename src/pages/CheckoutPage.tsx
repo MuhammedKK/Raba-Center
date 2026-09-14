@@ -45,8 +45,12 @@ export default function CheckoutPage() {
     return (
       <div className="mx-auto flex max-w-lg flex-col items-center gap-3 px-4 py-24 text-center sm:px-6">
         <CheckCircle2 className="text-success-500 size-12" aria-hidden />
-        <h1 className="text-2xl font-bold text-neutral-900">{t('checkout.confirmedTitle')}</h1>
-        <p className="text-neutral-500">{t('checkout.confirmedSubtitle', { orderId })}</p>
+        <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+          {t('checkout.confirmedTitle')}
+        </h1>
+        <p className="text-neutral-500 dark:text-neutral-400">
+          {t('checkout.confirmedSubtitle', { orderId })}
+        </p>
         <Link to={`/${locale}`}>
           <Button className="mt-4">{t('checkout.backHome')}</Button>
         </Link>
@@ -61,14 +65,16 @@ export default function CheckoutPage() {
   return (
     <div className="mx-auto max-w-lg px-4 py-10 sm:px-6">
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-xl font-bold text-neutral-900">{t('checkout.title')}</h1>
+        <h1 className="text-xl font-bold text-neutral-900 dark:text-neutral-50">
+          {t('checkout.title')}
+        </h1>
         <Badge tone="warning" className="flex items-center gap-1.5">
           <ShieldAlert className="size-3.5" aria-hidden />
           {t('checkout.demoMode')}
         </Badge>
       </div>
 
-      <p className="mb-6 rounded-lg bg-neutral-50 px-4 py-3 text-sm text-neutral-500">
+      <p className="mb-6 rounded-lg bg-neutral-50 px-4 py-3 text-sm text-neutral-500 dark:bg-neutral-900 dark:text-neutral-400">
         {t('checkout.demoModeNotice')}
       </p>
 
@@ -99,9 +105,11 @@ export default function CheckoutPage() {
           />
         </div>
 
-        <div className="flex items-center justify-between border-t border-neutral-200 pt-5">
-          <span className="text-sm text-neutral-500">{t('cart.subtotal')}</span>
-          <span className="text-lg font-bold text-neutral-900">
+        <div className="flex items-center justify-between border-t border-neutral-200 pt-5 dark:border-neutral-800">
+          <span className="text-sm text-neutral-500 dark:text-neutral-400">
+            {t('cart.subtotal')}
+          </span>
+          <span className="text-lg font-bold text-neutral-900 dark:text-neutral-50">
             {formatCurrency(subtotal, locale as Locale)}
           </span>
         </div>

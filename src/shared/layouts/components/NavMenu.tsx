@@ -35,8 +35,8 @@ export function NavMenu({ className, onNavigate }: NavMenuProps) {
             cn(
               'rounded-full px-3.5 py-2 text-sm font-medium transition-colors',
               isActive
-                ? 'bg-primary-100 text-primary-700'
-                : 'text-neutral-700 hover:bg-neutral-100',
+                ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300'
+                : 'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-900',
             )
           }
         >

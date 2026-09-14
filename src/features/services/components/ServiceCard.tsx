@@ -28,16 +28,16 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5, delay: index * 0.06 }}
       whileHover={{ y: -6 }}
-      className="group rounded-2xl border border-neutral-200 bg-white p-7 shadow-sm transition-shadow hover:shadow-md"
+      className="group rounded-2xl border border-neutral-200 bg-white p-7 shadow-sm transition-shadow hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none"
     >
       <span className="from-primary-500 to-accent-500 mb-5 flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br text-white">
         <Icon className="size-7" aria-hidden />
       </span>
-      <h3 className="text-lg font-bold text-neutral-900">{t(service.title)}</h3>
-      <p className="mt-2 text-sm text-neutral-700">{t(service.description)}</p>
+      <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-50">{t(service.title)}</h3>
+      <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-400">{t(service.description)}</p>
       <Link
         to={`/${locale}/contact?service=${service.id}`}
-        className="text-primary-600 mt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
+        className="text-primary-600 dark:text-primary-400 mt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
       >
         {t('cta.label')}
         <ArrowIcon

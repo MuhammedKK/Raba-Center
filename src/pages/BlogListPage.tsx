@@ -23,7 +23,7 @@ export default function BlogListPage() {
       </div>
 
       {filteredPosts.length === 0 ? (
-        <p className="py-16 text-center text-neutral-500">{t('list.empty')}</p>
+        <p className="py-16 text-center text-neutral-500 dark:text-neutral-400">{t('list.empty')}</p>
       ) : (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredPosts.map((post, index) => (

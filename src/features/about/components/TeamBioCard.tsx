@@ -36,13 +36,17 @@ export function TeamBioCard({ member }: { member: TeamMember }) {
             />
           </Card.Media>
           <Card.Body>
-            <h3 className="font-bold text-neutral-900">{t(member.name)}</h3>
-            <p className="text-primary-700 mt-1 text-sm font-semibold">{t(member.role)}</p>
-            <p className="mt-2 text-sm text-neutral-500">{t(member.credentials)}</p>
+            <h3 className="font-bold text-neutral-900 dark:text-neutral-50">{t(member.name)}</h3>
+            <p className="text-primary-700 dark:text-primary-300 mt-1 text-sm font-semibold">
+              {t(member.role)}
+            </p>
+            <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
+              {t(member.credentials)}
+            </p>
             <button
               type="button"
               onClick={() => setIsOpen(true)}
-              className="text-primary-600 mt-4 text-sm font-semibold hover:underline"
+              className="text-primary-600 dark:text-primary-400 mt-4 text-sm font-semibold hover:underline"
             >
               {t('team.readBio')}
             </button>
@@ -51,10 +55,16 @@ export function TeamBioCard({ member }: { member: TeamMember }) {
       </motion.div>
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} title={t(member.name)}>
-        <p className="text-primary-700 text-sm font-semibold">{t(member.role)}</p>
-        <p className="mt-1 text-sm text-neutral-500">{t(member.credentials)}</p>
-        <p className="mt-4 text-sm font-semibold text-neutral-900">{t(member.specialty)}</p>
-        <p className="mt-3 text-neutral-700">{t(member.bio)}</p>
+        <p className="text-primary-700 dark:text-primary-300 text-sm font-semibold">
+          {t(member.role)}
+        </p>
+        <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+          {t(member.credentials)}
+        </p>
+        <p className="mt-4 text-sm font-semibold text-neutral-900 dark:text-neutral-50">
+          {t(member.specialty)}
+        </p>
+        <p className="mt-3 text-neutral-700 dark:text-neutral-400">{t(member.bio)}</p>
       </Modal>
     </>
   )

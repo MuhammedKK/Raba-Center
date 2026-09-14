@@ -4,7 +4,7 @@ import { cn } from '@/shared/utils/cn'
 export function Skeleton({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn('animate-pulse rounded-lg bg-neutral-200', className)}
+      className={cn('animate-pulse rounded-lg bg-neutral-200 dark:bg-neutral-800', className)}
       aria-hidden
       {...props}
     />

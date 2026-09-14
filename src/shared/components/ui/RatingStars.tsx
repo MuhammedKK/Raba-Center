@@ -21,7 +21,7 @@ export function RatingStars({ value, max = 5, className }: RatingStarsProps) {
             key={index}
             className={cn(
               'size-4',
-              filled ? 'fill-accent-500 text-accent-500' : 'text-neutral-200',
+              filled ? 'fill-accent-500 text-accent-500' : 'text-neutral-200 dark:text-neutral-700',
             )}
             aria-hidden
           />

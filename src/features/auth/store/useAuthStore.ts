@@ -30,6 +30,6 @@ export const useAuthStore = create<AuthState>()(
       },
       logout: () => set({ isAuthenticated: false, user: null }),
     }),
-    { name: 'amal-care-auth' },
+    { name: 'raba-center-auth' },
   ),
 )

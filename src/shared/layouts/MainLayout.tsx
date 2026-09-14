@@ -4,6 +4,7 @@ import { Navigate, Outlet, useParams } from 'react-router'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { AmbientBackground } from '@/shared/components/composed/AmbientBackground'
+import { FloatingWhatsAppButton } from '@/shared/components/composed/FloatingWhatsAppButton'
 import { PageTransition } from '@/shared/components/composed/PageTransition'
 import type { Locale } from '@/types/common.types'
 
@@ -33,6 +34,7 @@ export function MainLayout() {
         </PageTransition>
       </main>
       <Footer />
+      <FloatingWhatsAppButton />
     </div>
   )
 }

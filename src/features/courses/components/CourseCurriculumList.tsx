@@ -9,7 +9,7 @@ export function CourseCurriculumList({ modules }: { modules: string[] }) {
       {modules.map((moduleKey) => (
         <li key={moduleKey} className="flex items-start gap-3">
           <CheckCircle2 className="text-primary-500 mt-0.5 size-5 shrink-0" aria-hidden />
-          <span className="text-neutral-700">{t(moduleKey)}</span>
+          <span className="text-neutral-700 dark:text-neutral-400">{t(moduleKey)}</span>
         </li>
       ))}
     </ul>

@@ -17,9 +17,17 @@ function Block({ block }: { block: BlogBlock }) {
 
   switch (block.type) {
     case 'heading':
-      return <h2 className="mt-8 text-xl font-bold text-neutral-900">{t(block.text)}</h2>
+      return (
+        <h2 className="mt-8 text-xl font-bold text-neutral-900 dark:text-neutral-50">
+          {t(block.text)}
+        </h2>
+      )
     case 'paragraph':
-      return <p className="mt-4 leading-relaxed text-neutral-700">{t(block.text)}</p>
+      return (
+        <p className="mt-4 leading-relaxed text-neutral-700 dark:text-neutral-400">
+          {t(block.text)}
+        </p>
+      )
     case 'image':
       return (
         <figure className="mt-6">
@@ -39,7 +47,7 @@ function Block({ block }: { block: BlogBlock }) {
       )
     case 'quote':
       return (
-        <blockquote className="border-primary-500 mt-6 border-s-4 ps-5 text-lg font-medium text-neutral-900 italic">
+        <blockquote className="border-primary-500 mt-6 border-s-4 ps-5 text-lg font-medium text-neutral-900 italic dark:text-neutral-50">
           “{t(block.text)}”
           {block.attribution && (
             <footer className="mt-2 text-sm font-normal text-neutral-500 not-italic">

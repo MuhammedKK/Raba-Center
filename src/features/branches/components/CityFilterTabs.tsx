@@ -25,7 +25,7 @@ export function CityFilterTabs({
             'rounded-full px-4 py-2 text-sm font-semibold transition-colors',
             value === city
               ? 'bg-primary-500 text-white'
-              : 'bg-white text-neutral-700 ring-1 ring-neutral-200 hover:bg-neutral-50',
+              : 'bg-white text-neutral-700 ring-1 ring-neutral-200 hover:bg-neutral-50 dark:bg-neutral-900 dark:text-neutral-300 dark:ring-neutral-700 dark:hover:bg-neutral-800',
           )}
         >
           {t(`filter.${city}`)}

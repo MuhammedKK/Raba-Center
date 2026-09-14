@@ -14,7 +14,7 @@ export function AccountLayout() {
 
   return (
     <div>
-      <div className="border-b border-neutral-200">
+      <div className="border-b border-neutral-200 dark:border-neutral-800">
         <div role="tablist" className="mx-auto flex max-w-6xl gap-2 px-4 sm:px-6">
           {accountNavItems.map((item) => (
             <NavLink
@@ -25,8 +25,8 @@ export function AccountLayout() {
                 cn(
                   '-mb-px border-b-2 px-4 py-2.5 text-sm font-medium transition-colors',
                   isActive
-                    ? 'border-primary-500 text-primary-700'
-                    : 'border-transparent text-neutral-400 hover:text-neutral-700',
+                    ? 'border-primary-500 text-primary-700 dark:border-primary-400 dark:text-primary-300'
+                    : 'border-transparent text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200',
                 )
               }
             >

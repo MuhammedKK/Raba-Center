@@ -23,10 +23,12 @@ export default function TrainerDetailPage() {
   if (notFound) {
     return (
       <div className="mx-auto max-w-6xl px-4 py-24 text-center sm:px-6">
-        <h1 className="text-2xl font-bold text-neutral-900">{t('detail.notFound')}</h1>
+        <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+          {t('detail.notFound')}
+        </h1>
         <Link
           to={`/${locale}/trainers`}
-          className="text-primary-600 mt-4 inline-block font-semibold"
+          className="text-primary-600 dark:text-primary-400 mt-4 inline-block font-semibold"
         >
           {t('list.eyebrow')}
         </Link>
@@ -52,15 +54,21 @@ export default function TrainerDetailPage() {
           className="size-32 shrink-0 rounded-2xl object-cover"
         />
         <div>
-          <h1 className="text-2xl font-extrabold text-neutral-900">{t(trainer.name)}</h1>
-          <p className="text-primary-700 mt-1 font-semibold">{t(trainer.role)}</p>
-          <p className="mt-1 text-sm text-neutral-500">{t(trainer.credentials)}</p>
+          <h1 className="text-2xl font-extrabold text-neutral-900 dark:text-neutral-50">
+            {t(trainer.name)}
+          </h1>
+          <p className="text-primary-700 dark:text-primary-300 mt-1 font-semibold">
+            {t(trainer.role)}
+          </p>
+          <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+            {t(trainer.credentials)}
+          </p>
         </div>
       </div>
 
       <div className="mt-8">
-        <h2 className="font-bold text-neutral-900">{t(trainer.specialty)}</h2>
-        <p className="mt-3 text-neutral-700">{t(trainer.bio)}</p>
+        <h2 className="font-bold text-neutral-900 dark:text-neutral-50">{t(trainer.specialty)}</h2>
+        <p className="mt-3 text-neutral-700 dark:text-neutral-400">{t(trainer.bio)}</p>
       </div>
     </div>
   )

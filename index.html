@@ -2,9 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amal Care — مركز أمل</title>
+    <title>Raba Center — رابا سينتر</title>
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('raba-center-theme')
+          var isDark =
+            stored === 'dark' ||
+            (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.classList.toggle('dark', isDark)
+        } catch (e) {
+          // localStorage unavailable — default to light, no flash to avoid
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

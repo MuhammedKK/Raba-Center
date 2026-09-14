@@ -42,6 +42,6 @@ export const useCartStore = create<CartState>()(
         })),
       clear: () => set({ items: [] }),
     }),
-    { name: 'amal-care-cart' },
+    { name: 'raba-center-cart' },
   ),
 )

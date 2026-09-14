@@ -15,8 +15,9 @@ const variantStyles: Record<Variant, string> = {
   primary: 'bg-primary-500 text-white hover:bg-primary-600 focus-visible:outline-primary-500',
   secondary: 'bg-accent-500 text-white hover:bg-accent-600 focus-visible:outline-accent-500',
   outline:
-    'border border-primary-500 text-primary-500 hover:bg-primary-50 focus-visible:outline-primary-500',
-  ghost: 'text-primary-700 hover:bg-primary-50 focus-visible:outline-primary-500',
+    'border border-primary-500 text-primary-500 hover:bg-primary-50 focus-visible:outline-primary-500 dark:text-primary-300 dark:hover:bg-primary-900/30',
+  ghost:
+    'text-primary-700 hover:bg-primary-50 focus-visible:outline-primary-500 dark:text-primary-300 dark:hover:bg-primary-900/30',
 }
 
 const sizeStyles: Record<Size, string> = {

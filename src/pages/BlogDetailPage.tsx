@@ -31,8 +31,13 @@ export default function BlogDetailPage() {
   if (notFound) {
     return (
       <div className="mx-auto max-w-6xl px-4 py-24 text-center sm:px-6">
-        <h1 className="text-2xl font-bold text-neutral-900">{t('detail.notFound')}</h1>
-        <Link to={`/${locale}/blog`} className="text-primary-600 mt-4 inline-block font-semibold">
+        <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+          {t('detail.notFound')}
+        </h1>
+        <Link
+          to={`/${locale}/blog`}
+          className="text-primary-600 dark:text-primary-400 mt-4 inline-block font-semibold"
+        >
           {t('list.eyebrow')}
         </Link>
       </div>
@@ -54,7 +59,9 @@ export default function BlogDetailPage() {
       <span className="text-primary-600 text-xs font-semibold tracking-wide uppercase">
         {t(`filter.${post.category}`)}
       </span>
-      <h1 className="mt-2 text-3xl font-extrabold text-neutral-900">{t(post.title)}</h1>
+      <h1 className="mt-2 text-3xl font-extrabold text-neutral-900 dark:text-neutral-50">
+        {t(post.title)}
+      </h1>
 
       <div className="mt-4 flex items-center gap-4">
         <p className="text-sm text-neutral-400">{formatDate(post.date, locale as Locale)}</p>
@@ -73,8 +80,10 @@ export default function BlogDetailPage() {
       </div>
 
       {relatedPosts.length > 0 && (
-        <div className="mt-16 border-t border-neutral-200 pt-10">
-          <h2 className="text-lg font-bold text-neutral-900">{t('detail.relatedPosts')}</h2>
+        <div className="mt-16 border-t border-neutral-200 pt-10 dark:border-neutral-800">
+          <h2 className="text-lg font-bold text-neutral-900 dark:text-neutral-50">
+            {t('detail.relatedPosts')}
+          </h2>
           <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {relatedPosts.map((relatedPost) => (
               <BlogCard key={relatedPost.id} post={relatedPost} />

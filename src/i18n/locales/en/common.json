@@ -1,7 +1,7 @@
 {
   "brand": {
-    "name": "Amal",
-    "fullName": "Amal Care"
+    "name": "Raba",
+    "fullName": "Raba Center"
   },
   "nav": {
     "home": "Home",
@@ -27,7 +27,8 @@
     "close": "Close",
     "menu": "Menu",
     "addToFavorites": "Add to favorites",
-    "removeFromFavorites": "Remove from favorites"
+    "removeFromFavorites": "Remove from favorites",
+    "whatsappTooltip": "Chat with us on WhatsApp"
   },
   "footer": {
     "tagline": "Training and rehabilitation services for children with developmental disorders — scientific method, human heart.",
@@ -38,6 +39,10 @@
   },
   "language": {
     "switchTo": "العربية"
+  },
+  "theme": {
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode"
   },
   "placeholder": {
     "description": "This page is scoped in the phases/ roadmap and will be fully built out in an upcoming phase.",

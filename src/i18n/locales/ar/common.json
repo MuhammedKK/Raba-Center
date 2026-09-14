@@ -1,7 +1,7 @@
 {
   "brand": {
-    "name": "أمل",
-    "fullName": "مركز أمل"
+    "name": "رابا",
+    "fullName": "رابا سينتر"
   },
   "nav": {
     "home": "الرئيسية",
@@ -27,7 +27,8 @@
     "close": "إغلاق",
     "menu": "القائمة",
     "addToFavorites": "أضف إلى المفضلة",
-    "removeFromFavorites": "إزالة من المفضلة"
+    "removeFromFavorites": "إزالة من المفضلة",
+    "whatsappTooltip": "تواصل معنا عبر واتساب"
   },
   "footer": {
     "tagline": "خدمات تدريبية وتأهيلية للأطفال ذوي الاضطرابات النمائية، بأسلوب علمي وقلب إنساني.",
@@ -38,6 +39,10 @@
   },
   "language": {
     "switchTo": "English"
+  },
+  "theme": {
+    "switchToDark": "التبديل إلى الوضع الداكن",
+    "switchToLight": "التبديل إلى الوضع الفاتح"
   },
   "placeholder": {
     "description": "هذه الصفحة جزء من خارطة الطريق الموثقة في مجلد phases/ وسيتم بناء محتواها الكامل في مرحلة قادمة.",

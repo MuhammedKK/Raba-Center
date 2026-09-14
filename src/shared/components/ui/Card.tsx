@@ -5,7 +5,7 @@ function Card({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className={cn(
-        'overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-shadow hover:shadow-md',
+        'overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none',
         className,
       )}
       {...props}
@@ -16,7 +16,10 @@ function Card({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
 function CardMedia({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn('aspect-[4/3] w-full overflow-hidden bg-neutral-100', className)}
+      className={cn(
+        'aspect-[4/3] w-full overflow-hidden bg-neutral-100 dark:bg-neutral-800',
+        className,
+      )}
       {...props}
     />
   )
@@ -29,7 +32,10 @@ function CardBody({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
 function CardFooter({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn('flex items-center justify-between border-t border-neutral-200 p-5', className)}
+      className={cn(
+        'flex items-center justify-between border-t border-neutral-200 p-5 dark:border-neutral-800',
+        className,
+      )}
       {...props}
     />
   )
