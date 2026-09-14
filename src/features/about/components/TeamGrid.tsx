@@ -10,7 +10,7 @@ export function TeamGrid({ team }: { team: TeamMember[] }) {
   if (team.length === 0) return null
 
   return (
-    <AnimatedSection className="bg-white/50 py-20 backdrop-blur-sm">
+    <AnimatedSection className="bg-white/50 py-20 backdrop-blur-sm dark:bg-neutral-950/50">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading align="center" eyebrow={t('team.eyebrow')} title={t('team.title')} />
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

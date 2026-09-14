@@ -39,10 +39,10 @@ export default function LoginPage() {
 
   return (
     <div className="mx-auto max-w-sm px-4 py-20 sm:px-6">
-      <h1 className="text-2xl font-bold text-neutral-900">{t('login.title')}</h1>
-      <p className="mt-2 text-sm text-neutral-500">{t('login.subtitle')}</p>
+      <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-50">{t('login.title')}</h1>
+      <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">{t('login.subtitle')}</p>
 
-      <div className="bg-primary-50 text-primary-700 mt-5 rounded-lg px-4 py-3 text-sm">
+      <div className="bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300 mt-5 rounded-lg px-4 py-3 text-sm">
         <p className="font-semibold">{t('login.demoHintTitle')}</p>
         <p className="mt-1">
           {seededUser.email} / {seededUser.password}

@@ -1,7 +1,7 @@
 import { MessageCircle } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import type { Branch } from '@/features/branches/branches.types'
-import { buildWhatsAppLink } from '@/features/branches/branches.utils'
+import { buildWhatsAppLink } from '@/shared/utils/whatsapp'
 
 export function WhatsAppButton({ branch }: { branch: Branch }) {
   const { t } = useTranslation('branches')

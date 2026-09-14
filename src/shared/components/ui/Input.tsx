@@ -16,7 +16,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 
   return (
     <div className="flex flex-col gap-1.5 text-start">
-      <label htmlFor={inputId} className="text-sm font-medium text-neutral-700">
+      <label htmlFor={inputId} className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
         {label}
       </label>
       <input
@@ -25,7 +25,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         aria-invalid={Boolean(error)}
         aria-describedby={error ? errorId : undefined}
         className={cn(
-          'focus:border-primary-500 focus:ring-primary-100 rounded-lg border border-neutral-200 px-4 py-2.5 text-neutral-900 transition-colors outline-none placeholder:text-neutral-400 focus:ring-2',
+          'focus:border-primary-500 focus:ring-primary-100 rounded-lg border border-neutral-200 px-4 py-2.5 text-neutral-900 transition-colors outline-none placeholder:text-neutral-400 focus:ring-2 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-50 dark:focus:ring-primary-900/30',
           error && 'border-danger-500 focus:border-danger-500 focus:ring-danger-500/10',
           className,
         )}

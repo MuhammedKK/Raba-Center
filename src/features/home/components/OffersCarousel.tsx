@@ -11,7 +11,7 @@ export function OffersCarousel({ offers }: { offers: Offer[] }) {
   if (offers.length === 0) return null
 
   return (
-    <AnimatedSection className="bg-white/50 py-20 backdrop-blur-sm">
+    <AnimatedSection className="bg-white/50 py-20 backdrop-blur-sm dark:bg-neutral-950/50">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading eyebrow={t('offers.eyebrow')} title={t('offers.title')} />
         <div className="flex snap-x snap-mandatory scrollbar-none gap-5 overflow-x-auto pb-4">

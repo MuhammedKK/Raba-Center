@@ -18,7 +18,7 @@ export function CertificationsList({
   const { ref, isInView } = useScrollReveal()
 
   return (
-    <AnimatedSection className="bg-neutral-50/50 py-20 backdrop-blur-sm">
+    <AnimatedSection className="bg-neutral-50/50 py-20 backdrop-blur-sm dark:bg-neutral-900/40">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading align="center" eyebrow={t('values.eyebrow')} title={t('values.title')} />
 
@@ -42,9 +42,14 @@ export function CertificationsList({
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((value) => (
-            <div key={value.id} className="rounded-2xl border border-neutral-200 bg-white p-6">
-              <h3 className="font-bold text-neutral-900">{t(value.title)}</h3>
-              <p className="mt-2 text-sm text-neutral-700">{t(value.description)}</p>
+            <div
+              key={value.id}
+              className="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
+            >
+              <h3 className="font-bold text-neutral-900 dark:text-neutral-50">{t(value.title)}</h3>
+              <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-400">
+                {t(value.description)}
+              </p>
             </div>
           ))}
         </div>

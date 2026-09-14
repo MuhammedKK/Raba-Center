@@ -42,7 +42,7 @@ export function SectionHeading({
         animate={isInView ? { scaleX: 1 } : undefined}
         transition={{ duration: 0.5, ease: 'easeOut', delay: 0.15 }}
       />
-      {description && <p className="mt-4 text-neutral-700">{description}</p>}
+      {description && <p className="mt-4 text-neutral-700 dark:text-neutral-400">{description}</p>}
     </div>
   )
 }

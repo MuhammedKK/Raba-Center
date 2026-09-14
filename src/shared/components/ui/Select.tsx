@@ -20,14 +20,14 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
 
   return (
     <div className="flex flex-col gap-1.5 text-start">
-      <label htmlFor={selectId} className="text-sm font-medium text-neutral-700">
+      <label htmlFor={selectId} className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
         {label}
       </label>
       <select
         ref={ref}
         id={selectId}
         className={cn(
-          'focus:border-primary-500 focus:ring-primary-100 rounded-lg border border-neutral-200 bg-white px-4 py-2.5 text-neutral-900 transition-colors outline-none focus:ring-2',
+          'focus:border-primary-500 focus:ring-primary-100 rounded-lg border border-neutral-200 bg-white px-4 py-2.5 text-neutral-900 transition-colors outline-none focus:ring-2 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-50 dark:focus:ring-primary-900/30',
           className,
         )}
         {...props}

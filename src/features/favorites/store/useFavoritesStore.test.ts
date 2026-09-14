@@ -38,7 +38,7 @@ describe('useFavoritesStore', () => {
 
   it('persists to localStorage under its store key so favorites survive a reload', () => {
     useFavoritesStore.getState().toggleFavorite('course-1')
-    const stored = localStorage.getItem('amal-care-favorites')
+    const stored = localStorage.getItem('raba-center-favorites')
     expect(stored).not.toBeNull()
     expect(JSON.parse(stored ?? '{}').state.ids).toEqual(['course-1'])
   })

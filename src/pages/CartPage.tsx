@@ -41,7 +41,7 @@ export default function CartPage() {
   if (lineItems.length === 0) {
     return (
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-20 text-center sm:px-6">
-        <p className="text-neutral-500">{t('cart.empty')}</p>
+        <p className="text-neutral-500 dark:text-neutral-400">{t('cart.empty')}</p>
         <Link to={`/${locale}/courses`}>
           <Button>{t('favorites.browse')}</Button>
         </Link>
@@ -55,7 +55,7 @@ export default function CartPage() {
         {lineItems.map(({ item, course }) => (
           <div
             key={item.courseId}
-            className="flex items-center gap-4 rounded-2xl border border-neutral-200 p-4"
+            className="flex items-center gap-4 rounded-2xl border border-neutral-200 p-4 dark:border-neutral-800"
           >
             <img
               src={imageByCourse[course.image]}
@@ -64,8 +64,10 @@ export default function CartPage() {
               className="size-20 shrink-0 rounded-xl object-cover"
             />
             <div className="min-w-0 flex-1">
-              <h3 className="truncate font-semibold text-neutral-900">{t(course.title)}</h3>
-              <p className="text-primary-700 mt-1 font-bold">
+              <h3 className="truncate font-semibold text-neutral-900 dark:text-neutral-50">
+                {t(course.title)}
+              </h3>
+              <p className="text-primary-700 dark:text-primary-300 mt-1 font-bold">
                 {formatCurrency(course.price, locale as Locale)}
               </p>
             </div>
@@ -75,7 +77,7 @@ export default function CartPage() {
                 type="button"
                 onClick={() => setQuantity(item.courseId, item.quantity - 1)}
                 aria-label={t('cart.decrease')}
-                className="rounded-full p-1.5 text-neutral-500 ring-1 ring-neutral-200 hover:bg-neutral-50"
+                className="rounded-full p-1.5 text-neutral-500 ring-1 ring-neutral-200 hover:bg-neutral-50 dark:text-neutral-400 dark:ring-neutral-700 dark:hover:bg-neutral-800"
               >
                 <Minus className="size-4" aria-hidden />
               </button>
@@ -84,7 +86,7 @@ export default function CartPage() {
                 type="button"
                 onClick={() => setQuantity(item.courseId, item.quantity + 1)}
                 aria-label={t('cart.increase')}
-                className="rounded-full p-1.5 text-neutral-500 ring-1 ring-neutral-200 hover:bg-neutral-50"
+                className="rounded-full p-1.5 text-neutral-500 ring-1 ring-neutral-200 hover:bg-neutral-50 dark:text-neutral-400 dark:ring-neutral-700 dark:hover:bg-neutral-800"
               >
                 <Plus className="size-4" aria-hidden />
               </button>
@@ -94,7 +96,7 @@ export default function CartPage() {
               type="button"
               onClick={() => removeItem(item.courseId)}
               aria-label={t('cart.remove')}
-              className="text-danger-500 rounded-full p-2 hover:bg-neutral-100"
+              className="text-danger-500 rounded-full p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800"
             >
               <Trash2 className="size-4" aria-hidden />
             </button>
@@ -102,10 +104,10 @@ export default function CartPage() {
         ))}
       </div>
 
-      <div className="mt-8 flex items-center justify-between rounded-2xl border border-neutral-200 p-5">
+      <div className="mt-8 flex items-center justify-between rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
         <div>
-          <p className="text-sm text-neutral-500">{t('cart.subtotal')}</p>
-          <p className="text-2xl font-bold text-neutral-900">
+          <p className="text-sm text-neutral-500 dark:text-neutral-400">{t('cart.subtotal')}</p>
+          <p className="text-2xl font-bold text-neutral-900 dark:text-neutral-50">
             {formatCurrency(subtotal, locale as Locale)}
           </p>
         </div>

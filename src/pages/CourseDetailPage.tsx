@@ -36,10 +36,12 @@ export default function CourseDetailPage() {
   if (notFound) {
     return (
       <div className="mx-auto max-w-6xl px-4 py-24 text-center sm:px-6">
-        <h1 className="text-2xl font-bold text-neutral-900">{t('detail.notFound')}</h1>
+        <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-50">
+          {t('detail.notFound')}
+        </h1>
         <Link
           to={`/${locale}/courses`}
-          className="text-primary-600 mt-4 inline-block font-semibold"
+          className="text-primary-600 dark:text-primary-400 mt-4 inline-block font-semibold"
         >
           {t('list.eyebrow')}
         </Link>
@@ -78,20 +80,22 @@ export default function CourseDetailPage() {
         </div>
 
         <div>
-          <h1 className="text-3xl font-extrabold text-neutral-900">{t(course.title)}</h1>
+          <h1 className="text-3xl font-extrabold text-neutral-900 dark:text-neutral-50">
+            {t(course.title)}
+          </h1>
           <div className="mt-3 flex items-center gap-2">
             <RatingStars value={course.rating} />
             <span className="text-sm text-neutral-400">({course.reviewCount})</span>
           </div>
-          <p className="mt-4 text-neutral-700">{t(course.description)}</p>
+          <p className="mt-4 text-neutral-700 dark:text-neutral-400">{t(course.description)}</p>
 
-          <div className="mt-5 flex items-center gap-1.5 text-sm text-neutral-700">
+          <div className="mt-5 flex items-center gap-1.5 text-sm text-neutral-700 dark:text-neutral-400">
             <Clock className="size-4" aria-hidden />
             {t('duration', { count: course.durationHours })}
           </div>
 
-          <div className="mt-6 flex items-center justify-between rounded-2xl border border-neutral-200 p-5">
-            <span className="text-primary-700 text-2xl font-bold">
+          <div className="mt-6 flex items-center justify-between rounded-2xl border border-neutral-200 p-5 dark:border-neutral-800">
+            <span className="text-primary-700 dark:text-primary-300 text-2xl font-bold">
               {formatCurrency(course.price, locale as Locale)}
             </span>
             {isAuthenticated ? (
@@ -114,7 +118,9 @@ export default function CourseDetailPage() {
       </div>
 
       <div className="mt-14">
-        <h2 className="text-xl font-bold text-neutral-900">{t('detail.curriculum')}</h2>
+        <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-50">
+          {t('detail.curriculum')}
+        </h2>
         <div className="mt-5">
           <CourseCurriculumList modules={course.curriculum} />
         </div>

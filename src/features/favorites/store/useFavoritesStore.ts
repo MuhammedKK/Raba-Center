@@ -19,6 +19,6 @@ export const useFavoritesStore = create<FavoritesState>()(
             : [...state.ids, id],
         })),
     }),
-    { name: 'amal-care-favorites' },
+    { name: 'raba-center-favorites' },
   ),
 )

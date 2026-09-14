@@ -39,8 +39,12 @@ export function BlogCard({ post }: { post: BlogPost }) {
             <span className="text-primary-600 text-xs font-semibold tracking-wide uppercase">
               {t(`filter.${post.category}`)}
             </span>
-            <h3 className="mt-1 line-clamp-2 font-semibold text-neutral-900">{t(post.title)}</h3>
-            <p className="mt-2 line-clamp-2 text-sm text-neutral-500">{t(post.excerpt)}</p>
+            <h3 className="mt-1 line-clamp-2 font-semibold text-neutral-900 dark:text-neutral-50">
+              {t(post.title)}
+            </h3>
+            <p className="mt-2 line-clamp-2 text-sm text-neutral-500 dark:text-neutral-400">
+              {t(post.excerpt)}
+            </p>
             <p className="mt-3 text-xs text-neutral-400">
               {formatDate(post.date, locale as Locale)}
             </p>

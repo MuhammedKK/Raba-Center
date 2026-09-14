@@ -13,11 +13,11 @@ export function AnimatedStatsCounter({ value, suffix = '%', label }: AnimatedSta
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-primary-700 text-4xl font-extrabold tabular-nums sm:text-5xl">
+      <div className="text-primary-700 dark:text-primary-300 text-4xl font-extrabold tabular-nums sm:text-5xl">
         {displayValue}
         {suffix}
       </div>
-      <p className="mt-2 text-sm font-medium text-neutral-700">{label}</p>
+      <p className="mt-2 text-sm font-medium text-neutral-700 dark:text-neutral-400">{label}</p>
     </div>
   )
 }

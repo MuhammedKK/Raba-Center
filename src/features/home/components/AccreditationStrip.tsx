@@ -9,7 +9,7 @@ export function AccreditationStrip({ credentials }: { credentials: Accreditation
   if (credentials.length === 0) return null
 
   return (
-    <div className="border-y border-neutral-200 bg-white py-8">
+    <div className="border-y border-neutral-200 bg-white py-8 dark:border-neutral-800 dark:bg-neutral-950">
       <p className="mb-5 text-center text-xs font-semibold tracking-wide text-neutral-400 uppercase">
         {t('credentials.eyebrow')}
       </p>

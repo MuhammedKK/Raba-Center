@@ -30,10 +30,10 @@ export function InquiryForm() {
 
   if (isSubmitted) {
     return (
-      <div className="flex flex-col items-center gap-3 rounded-2xl border border-neutral-200 py-12 text-center">
+      <div className="flex flex-col items-center gap-3 rounded-2xl border border-neutral-200 py-12 text-center dark:border-neutral-800">
         <CheckCircle2 className="text-success-500 size-10" aria-hidden />
-        <p className="font-semibold text-neutral-900">{t('success.title')}</p>
-        <p className="text-sm text-neutral-500">{t('success.subtitle')}</p>
+        <p className="font-semibold text-neutral-900 dark:text-neutral-50">{t('success.title')}</p>
+        <p className="text-sm text-neutral-500 dark:text-neutral-400">{t('success.subtitle')}</p>
         <Button variant="ghost" onClick={() => setIsSubmitted(false)}>
           {t('success.sendAnother')}
         </Button>
@@ -58,14 +58,17 @@ export function InquiryForm() {
         {...register('phone')}
       />
       <div className="flex flex-col gap-1.5 text-start">
-        <label htmlFor="inquiry-message" className="text-sm font-medium text-neutral-700">
+        <label
+          htmlFor="inquiry-message"
+          className="text-sm font-medium text-neutral-700 dark:text-neutral-300"
+        >
           {t('fields.message')}
         </label>
         <textarea
           id="inquiry-message"
           rows={4}
           aria-invalid={Boolean(errors.message)}
-          className="focus:border-primary-500 focus:ring-primary-100 rounded-lg border border-neutral-200 px-4 py-2.5 text-neutral-900 transition-colors outline-none focus:ring-2"
+          className="focus:border-primary-500 focus:ring-primary-100 rounded-lg border border-neutral-200 px-4 py-2.5 text-neutral-900 transition-colors outline-none focus:ring-2 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-50 dark:focus:ring-primary-900/30"
           {...register('message')}
         />
         {errors.message && (

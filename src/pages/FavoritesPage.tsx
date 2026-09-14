@@ -15,7 +15,7 @@ export default function FavoritesPage() {
   if (favoriteCourses.length === 0) {
     return (
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-20 text-center sm:px-6">
-        <p className="text-neutral-500">{t('favorites.empty')}</p>
+        <p className="text-neutral-500 dark:text-neutral-400">{t('favorites.empty')}</p>
         <Link to={`/${locale}/courses`}>
           <Button>{t('favorites.browse')}</Button>
         </Link>

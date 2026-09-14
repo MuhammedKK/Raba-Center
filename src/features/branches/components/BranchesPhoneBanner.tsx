@@ -12,7 +12,7 @@ export function BranchesPhoneBanner() {
         className="flex items-center gap-2 font-semibold"
       >
         <Phone className="size-5" aria-hidden />
-        {MAIN_PHONE}
+        <span dir="ltr">{MAIN_PHONE}</span>
       </a>
       <span className="flex items-center gap-2 text-sm text-white/85">
         <Clock className="size-5" aria-hidden />

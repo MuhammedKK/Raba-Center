@@ -33,10 +33,14 @@ export function TrainerCard({ trainer }: { trainer: Trainer }) {
             />
           </Card.Media>
           <Card.Body>
-            <h3 className="font-bold text-neutral-900">{t(trainer.name)}</h3>
-            <p className="text-primary-700 mt-1 text-sm font-semibold">{t(trainer.role)}</p>
-            <p className="mt-2 text-sm text-neutral-500">{t(trainer.credentials)}</p>
-            <span className="text-primary-600 mt-4 inline-block text-sm font-semibold hover:underline">
+            <h3 className="font-bold text-neutral-900 dark:text-neutral-50">{t(trainer.name)}</h3>
+            <p className="text-primary-700 dark:text-primary-300 mt-1 text-sm font-semibold">
+              {t(trainer.role)}
+            </p>
+            <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
+              {t(trainer.credentials)}
+            </p>
+            <span className="text-primary-600 dark:text-primary-400 mt-4 inline-block text-sm font-semibold hover:underline">
               {t('viewProfile')}
             </span>
           </Card.Body>

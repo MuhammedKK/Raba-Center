@@ -14,18 +14,18 @@ export function BranchCard({ branch }: { branch: Branch }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.4 }}
-      className="rounded-2xl border border-neutral-200 bg-white p-6"
+      className="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
     >
-      <span className="bg-primary-100 text-primary-700 mb-2 inline-flex rounded-full px-3 py-1 text-xs font-semibold">
+      <span className="bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300 mb-2 inline-flex rounded-full px-3 py-1 text-xs font-semibold">
         {t(branch.city)}
       </span>
-      <h3 className="text-lg font-bold text-neutral-900">{t(branch.name)}</h3>
+      <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-50">{t(branch.name)}</h3>
 
-      <div className="mt-3 flex items-start gap-2 text-sm text-neutral-700">
+      <div className="mt-3 flex items-start gap-2 text-sm text-neutral-700 dark:text-neutral-400">
         <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden />
         <span>{t(branch.address)}</span>
       </div>
-      <div className="mt-2 flex items-center gap-2 text-sm text-neutral-700">
+      <div className="mt-2 flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-400">
         <Clock className="size-4 shrink-0" aria-hidden />
         <span>{t(branch.hours)}</span>
       </div>

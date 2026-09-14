@@ -33,10 +33,10 @@ export function ShadowTeacherRequestForm() {
 
   if (isSubmitted) {
     return (
-      <div className="flex flex-col items-center gap-3 rounded-2xl border border-neutral-200 py-12 text-center">
+      <div className="flex flex-col items-center gap-3 rounded-2xl border border-neutral-200 py-12 text-center dark:border-neutral-800">
         <CheckCircle2 className="text-success-500 size-10" aria-hidden />
-        <p className="font-semibold text-neutral-900">{t('success.title')}</p>
-        <p className="text-sm text-neutral-500">{t('success.subtitle')}</p>
+        <p className="font-semibold text-neutral-900 dark:text-neutral-50">{t('success.title')}</p>
+        <p className="text-sm text-neutral-500 dark:text-neutral-400">{t('success.subtitle')}</p>
         <Button variant="ghost" onClick={() => setIsSubmitted(false)}>
           {t('success.sendAnother')}
         </Button>

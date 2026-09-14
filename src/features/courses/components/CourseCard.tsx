@@ -38,21 +38,21 @@ export function CourseCard({ course }: { course: Course }) {
             <FavoriteButton id={course.id} className="absolute end-3 top-3" />
           </Card.Media>
           <Card.Body>
-            <h3 className="line-clamp-2 min-h-12 font-semibold text-neutral-900">
+            <h3 className="line-clamp-2 min-h-12 font-semibold text-neutral-900 dark:text-neutral-50">
               {t(course.title)}
             </h3>
             <div className="mt-2 flex items-center gap-2">
               <RatingStars value={course.rating} />
               <span className="text-xs text-neutral-400">({course.reviewCount})</span>
             </div>
-            <div className="mt-3 flex items-center gap-1.5 text-sm text-neutral-700">
+            <div className="mt-3 flex items-center gap-1.5 text-sm text-neutral-700 dark:text-neutral-400">
               <Clock className="size-4" aria-hidden />
               {t('duration', { count: course.durationHours })}
             </div>
           </Card.Body>
         </Link>
         <Card.Footer>
-          <span className="text-primary-700 text-lg font-bold">
+          <span className="text-primary-700 dark:text-primary-300 text-lg font-bold">
             {formatCurrency(course.price, locale as Locale)}
           </span>
         </Card.Footer>

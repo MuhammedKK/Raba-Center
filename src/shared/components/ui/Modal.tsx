@@ -37,7 +37,7 @@ export function Modal({ isOpen, onClose, title, children, className }: ModalProp
             aria-labelledby="modal-title"
             tabIndex={-1}
             className={cn(
-              'max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-6 shadow-xl',
+              'max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-6 shadow-xl dark:bg-neutral-900',
               className,
             )}
             initial={{ opacity: 0, scale: 0.96, y: 12 }}
@@ -46,14 +46,14 @@ export function Modal({ isOpen, onClose, title, children, className }: ModalProp
             onClick={(event) => event.stopPropagation()}
           >
             <div className="mb-4 flex items-center justify-between">
-              <h2 id="modal-title" className="text-lg font-semibold text-neutral-900">
+              <h2 id="modal-title" className="text-lg font-semibold text-neutral-900 dark:text-neutral-50">
                 {title}
               </h2>
               <button
                 type="button"
                 onClick={onClose}
                 aria-label={t('actions.close')}
-                className="rounded-full p-1.5 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-700"
+                className="rounded-full p-1.5 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-700 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
               >
                 <X className="size-5" aria-hidden />
               </button>
