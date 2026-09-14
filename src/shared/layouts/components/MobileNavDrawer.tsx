@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { X } from 'lucide-react'
 import { useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import { NavMenu } from './NavMenu'
 import { useDirection } from '@/shared/hooks/useDirection'
@@ -20,7 +21,7 @@ export function MobileNavDrawer({ isOpen, onClose }: MobileNavDrawerProps) {
 
   const offscreenX = direction === 'rtl' ? '100%' : '-100%'
 
-  return (
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
         <>
@@ -55,6 +56,7 @@ export function MobileNavDrawer({ isOpen, onClose }: MobileNavDrawerProps) {
           </motion.div>
         </>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   )
 }
