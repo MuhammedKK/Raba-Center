@@ -5,6 +5,39 @@
   },
   "viewProfile": "View profile",
   "detail": {
-    "notFound": "This trainer profile couldn't be found."
+    "notFound": "This trainer profile couldn't be found.",
+    "about": "About",
+    "qualifications": "Qualifications & certifications",
+    "experience": "Years of experience",
+    "rating": "Rating",
+    "registerCta": "Register with the doctor"
+  },
+  "profiles": {
+    "hanaa": {
+      "name": "Dr. Hanaa Mohammed Bashir",
+      "role": "Medical Director – Psychology Consultant",
+      "bio": "10+ years of experience in rehabilitation and psychological treatment, Ph.D. in Psychology, and Senior Specialist at the Saudi Authority.",
+      "qualifications": "Ph.D. in Psychology; Senior Specialist at the Saudi Authority",
+      "experience": "10+ years"
+    },
+    "ahmed": {
+      "name": "Ahmed Abu Zaid Anwar",
+      "role": "General Manager of Rehabilitation Programs | Head of ABA Department",
+      "bio": "MA, QBA, IBA — 12 years of experience and a CEU provider for the QABA Board.",
+      "qualifications": "MA, QBA, IBA; Continuing Education Units (CEU) provider for the QABA Board",
+      "experience": "12 years"
+    },
+    "hisham": {
+      "name": "Hisham Salama",
+      "role": "External Projects Manager | Head of Speech Therapy Department",
+      "bio": "Manages and delivers external rehabilitation projects and leads speech therapy services."
+    },
+    "doha": {
+      "name": "Doha Khaled Anwar",
+      "role": "ABA Supervisor – Al-Narjis Branch",
+      "bio": "Bachelor's degree in Special Education, 9 years of experience; certifications: RBT, QASP-S, IBA.",
+      "qualifications": "Bachelor's in Special Education; certifications: RBT, QASP-S, IBA",
+      "experience": "9 years"
+    }
   }
 }

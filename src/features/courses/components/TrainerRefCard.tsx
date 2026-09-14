@@ -1,16 +1,16 @@
 import { useTranslation } from 'react-i18next'
 import { Link, useParams } from 'react-router'
-import behaviorImage from '@/assets/images/team/team-behavior.jpg'
-import leadImage from '@/assets/images/team/team-lead.jpg'
-import occupationalImage from '@/assets/images/team/team-occupational.jpg'
-import speechImage from '@/assets/images/team/team-speech.jpg'
+import ahmedImage from '@/assets/images/trainers/ahmed-abu-zaid.png'
+import dohaImage from '@/assets/images/trainers/doha-khaled.png'
+import hanaaImage from '@/assets/images/trainers/hanaa-bashir.png'
+import hishamImage from '@/assets/images/trainers/hisham-salama.png'
 import type { Trainer } from '@/features/trainers/trainers.types'
 
 const imageByTrainer: Record<Trainer['photo'], string> = {
-  lead: leadImage,
-  behavior: behaviorImage,
-  speech: speechImage,
-  occupational: occupationalImage,
+  hanaa: hanaaImage,
+  ahmed: ahmedImage,
+  hisham: hishamImage,
+  doha: dohaImage,
 }
 
 export function TrainerRefCard({ trainer }: { trainer: Trainer }) {

@@ -4,6 +4,7 @@ import { ContactInfoCard } from '@/features/contact/components/ContactInfoCard'
 import { HomeServiceRequestForm } from '@/features/contact/components/HomeServiceRequestForm'
 import { InquiryForm } from '@/features/contact/components/InquiryForm'
 import { ShadowTeacherRequestForm } from '@/features/contact/components/ShadowTeacherRequestForm'
+import { useTrainer } from '@/features/trainers/hooks/useTrainer'
 import { SectionHeading } from '@/shared/components/composed/SectionHeading'
 import { Tabs } from '@/shared/components/ui'
 
@@ -17,6 +18,9 @@ export default function ContactPage() {
   const [searchParams] = useSearchParams()
   const serviceParam = searchParams.get('service') ?? ''
   const defaultTab = tabByService[serviceParam] ?? 'inquiry'
+  const trainerSlug = searchParams.get('trainer') ?? undefined
+  const { trainer } = useTrainer(trainerSlug)
+  const defaultTrainerName = trainer ? t(trainer.name) : undefined
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
@@ -30,7 +34,7 @@ export default function ContactPage() {
             <Tabs.Trigger value="shadowTeacher">{t('tabs.shadowTeacher')}</Tabs.Trigger>
           </Tabs.List>
           <Tabs.Content value="inquiry">
-            <InquiryForm />
+            <InquiryForm defaultTrainerName={defaultTrainerName} />
           </Tabs.Content>
           <Tabs.Content value="homeService">
             <HomeServiceRequestForm />

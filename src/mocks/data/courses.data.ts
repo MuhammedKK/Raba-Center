@@ -12,7 +12,7 @@ export const coursesData: Course[] = [
     reviewCount: 128,
     durationHours: 40,
     image: 'aba',
-    trainerId: 'trainer-behavior',
+    trainerId: 'trainer-doha',
     curriculum: [
       'details.abaTechnician.curriculum.module1',
       'details.abaTechnician.curriculum.module2',
@@ -31,7 +31,7 @@ export const coursesData: Course[] = [
     reviewCount: 64,
     durationHours: 56,
     image: 'supervisor',
-    trainerId: 'trainer-lead',
+    trainerId: 'trainer-ahmed',
     curriculum: [
       'details.autismSupervisor.curriculum.module1',
       'details.autismSupervisor.curriculum.module2',
@@ -50,7 +50,7 @@ export const coursesData: Course[] = [
     reviewCount: 41,
     durationHours: 120,
     image: 'specialist',
-    trainerId: 'trainer-lead',
+    trainerId: 'trainer-hanaa',
     curriculum: [
       'details.behaviorSpecialist.curriculum.module1',
       'details.behaviorSpecialist.curriculum.module2',
@@ -69,7 +69,7 @@ export const coursesData: Course[] = [
     reviewCount: 87,
     durationHours: 32,
     image: 'speech',
-    trainerId: 'trainer-speech',
+    trainerId: 'trainer-hisham',
     curriculum: [
       'details.speechFoundations.curriculum.module1',
       'details.speechFoundations.curriculum.module2',

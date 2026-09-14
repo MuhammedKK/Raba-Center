@@ -3,6 +3,7 @@
     "eyebrow": "Get in touch",
     "title": "We're here to help your family take the next step"
   },
+  "selectedTrainer": "Selected trainer: {{name}}",
   "tabs": {
     "inquiry": "General Inquiry",
     "homeService": "Home Service Request",

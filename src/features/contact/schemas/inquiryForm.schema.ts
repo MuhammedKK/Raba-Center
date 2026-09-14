@@ -10,6 +10,7 @@ export function createInquiryFormSchema(t: TFunction<'contact'>) {
       .trim()
       .regex(/^\+?[0-9 ]{7,15}$/, t('errors.phoneInvalid')),
     message: z.string().trim().min(10, t('errors.messageTooShort')),
+    trainerName: z.string().optional(),
   })
 }
 
