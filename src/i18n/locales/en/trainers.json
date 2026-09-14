@@ -4,6 +4,10 @@
     "title": "Certified specialists behind every program"
   },
   "viewProfile": "View profile",
+  "wave": {
+    "previous": "Previous trainer",
+    "next": "Next trainer"
+  },
   "detail": {
     "notFound": "This trainer profile couldn't be found.",
     "about": "About",

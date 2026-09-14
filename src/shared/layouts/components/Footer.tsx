@@ -29,7 +29,7 @@ export function Footer() {
     <footer className="bg-secondary-700 border-t border-neutral-200 text-neutral-50 dark:border-neutral-800 dark:bg-neutral-900">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div className="flex flex-col gap-3">
-          <Logo alwaysWhite className="h-8" />
+          <Logo alwaysWhite className="h-8 self-start" />
           <p className="text-sm text-neutral-200">{t('footer.tagline')}</p>
           <div className="flex gap-2 pt-2">
             {socialLinks.map(({ platform, label, href }) => (

@@ -7,14 +7,25 @@ const schema = createCheckoutFormSchema(t)
 
 const validPayload = {
   address: 'King Fahd Road, Al Olaya, Riyadh',
+  cardBrand: 'visa' as const,
   cardNumber: '4242 4242 4242 4242',
   expiry: '09/28',
   cvc: '123',
 }
 
 describe('createCheckoutFormSchema', () => {
-  it('accepts a valid payload', () => {
+  it('accepts a valid visa payload', () => {
     expect(schema.safeParse(validPayload).success).toBe(true)
+  })
+
+  it('accepts a valid mastercard payload', () => {
+    expect(
+      schema.safeParse({
+        ...validPayload,
+        cardBrand: 'mastercard',
+        cardNumber: '5105 1051 0510 5100',
+      }).success,
+    ).toBe(true)
   })
 
   it('rejects a too-short address', () => {
@@ -23,6 +34,13 @@ describe('createCheckoutFormSchema', () => {
 
   it('rejects an invalid card number', () => {
     expect(schema.safeParse({ ...validPayload, cardNumber: '1234' }).success).toBe(false)
+  })
+
+  it('rejects a card number that does not match the selected brand', () => {
+    // A Mastercard-format number submitted while "visa" is selected.
+    expect(schema.safeParse({ ...validPayload, cardNumber: '5105 1051 0510 5100' }).success).toBe(
+      false,
+    )
   })
 
   it('rejects an invalid expiry format', () => {
