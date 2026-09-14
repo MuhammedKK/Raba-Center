@@ -45,6 +45,13 @@
     "title": "Featured certification programs",
     "viewAll": "View all programs"
   },
+  "trainers": {
+    "eyebrow": "Our team",
+    "title": "Meet our expert trainers",
+    "previous": "Previous trainer",
+    "next": "Next trainer",
+    "showAll": "Show all trainers"
+  },
   "testimonials": {
     "eyebrow": "Families we've supported",
     "title": "What parents are saying",

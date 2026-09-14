@@ -4,8 +4,10 @@ import { coursesApi } from '@/api/endpoints/courses.api'
 import { offersApi } from '@/api/endpoints/offers.api'
 import { statsApi } from '@/api/endpoints/stats.api'
 import { testimonialsApi } from '@/api/endpoints/testimonials.api'
+import { trainersApi } from '@/api/endpoints/trainers.api'
 import type { Course } from '@/features/courses/courses.types'
 import type { Accreditation, Offer, Testimonial } from '@/features/home/home.types'
+import type { Trainer } from '@/features/trainers/trainers.types'
 import type { OrgStat } from '@/mocks/data/stats.data'
 
 interface HomeData {
@@ -15,6 +17,7 @@ interface HomeData {
   testimonials: Testimonial[]
   credentials: Accreditation[]
   accreditations: Accreditation[]
+  trainers: Trainer[]
 }
 
 const emptyState: HomeData = {
@@ -24,6 +27,7 @@ const emptyState: HomeData = {
   testimonials: [],
   credentials: [],
   accreditations: [],
+  trainers: [],
 }
 
 export function useHomeData() {
@@ -40,11 +44,14 @@ export function useHomeData() {
       testimonialsApi.getTestimonials(),
       accreditationsApi.getCredentials(),
       accreditationsApi.getAccreditations(),
+      trainersApi.getTrainers(),
     ])
-      .then(([stats, offers, featuredCourses, testimonials, credentials, accreditations]) => {
-        if (cancelled) return
-        setData({ stats, offers, featuredCourses, testimonials, credentials, accreditations })
-      })
+      .then(
+        ([stats, offers, featuredCourses, testimonials, credentials, accreditations, trainers]) => {
+          if (cancelled) return
+          setData({ stats, offers, featuredCourses, testimonials, credentials, accreditations, trainers })
+        },
+      )
       .finally(() => {
         if (!cancelled) setIsLoading(false)
       })
