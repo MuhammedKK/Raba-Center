@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Link, useParams } from 'react-router'
 import { routePaths } from '@/app/router/routePaths'
 import { SocialIcon, type SocialPlatform } from '@/shared/components/ui/SocialIcon'
+import { MAIN_EMAIL, MAIN_PHONE } from '@/shared/constants/contact'
 
 const quickLinks = [
   { key: 'about', path: routePaths.about },
@@ -65,10 +66,10 @@ export function Footer() {
           </h3>
           <ul className="flex flex-col gap-2 text-sm text-neutral-200">
             <li className="flex items-center gap-2">
-              <Phone className="size-4" aria-hidden /> +966 57 510 0100
+              <Phone className="size-4" aria-hidden /> {MAIN_PHONE}
             </li>
             <li className="flex items-center gap-2">
-              <Mail className="size-4" aria-hidden /> info@amalcare.example
+              <Mail className="size-4" aria-hidden /> {MAIN_EMAIL}
             </li>
             <li className="flex items-center gap-2">
               <MapPin className="size-4" aria-hidden /> Riyadh, Saudi Arabia

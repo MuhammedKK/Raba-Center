@@ -1,0 +1,51 @@
+{
+  "list": {
+    "eyebrow": "Branches",
+    "title": "Find the branch closest to your family",
+    "empty": "No branches in this city yet."
+  },
+  "filter": {
+    "label": "Filter by city",
+    "all": "All cities",
+    "riyadh": "Riyadh",
+    "jeddah": "Jeddah",
+    "dammam": "Dammam"
+  },
+  "banner": {
+    "hours": "Sat–Thu, 9:00 AM – 6:00 PM"
+  },
+  "actions": {
+    "whatsapp": "WhatsApp",
+    "directions": "Directions"
+  },
+  "whatsapp": {
+    "message": "Hello, I'd like to ask about the {{branch}} branch."
+  },
+  "cities": {
+    "riyadh": "Riyadh",
+    "jeddah": "Jeddah",
+    "dammam": "Dammam"
+  },
+  "items": {
+    "riyadhOlaya": {
+      "name": "Riyadh – Olaya Branch",
+      "address": "King Fahd Road, Al Olaya District, Riyadh",
+      "hours": "Sat–Thu, 9:00 AM – 6:00 PM"
+    },
+    "riyadhNarjis": {
+      "name": "Riyadh – Al Narjis Branch",
+      "address": "Prince Turki bin Abdulaziz Road, Al Narjis District, Riyadh",
+      "hours": "Sat–Thu, 9:00 AM – 6:00 PM"
+    },
+    "jeddahCorniche": {
+      "name": "Jeddah – Corniche Branch",
+      "address": "Al Corniche Road, Al Shati District, Jeddah",
+      "hours": "Sat–Thu, 9:00 AM – 6:00 PM"
+    },
+    "dammamShatea": {
+      "name": "Dammam – Al Shatea Branch",
+      "address": "King Faisal Street, Al Shatea District, Dammam",
+      "hours": "Sat–Thu, 9:00 AM – 6:00 PM"
+    }
+  }
+}

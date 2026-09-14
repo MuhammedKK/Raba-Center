@@ -8,7 +8,16 @@ import {
 import { Tag } from 'lucide-react'
 import type { PointerEvent } from 'react'
 import { useTranslation } from 'react-i18next'
+import abaImage from '@/assets/images/offers/offer-aba-bundle.jpg'
+import homeServicesImage from '@/assets/images/offers/offer-home-services.jpg'
+import trainingBundleImage from '@/assets/images/offers/offer-training-bundle.jpg'
 import type { Offer } from '@/features/home/home.types'
+
+const imageByOffer: Record<Offer['image'], string> = {
+  aba: abaImage,
+  homeServices: homeServicesImage,
+  trainingBundle: trainingBundleImage,
+}
 
 export function OfferCard({ offer }: { offer: Offer }) {
   const { t } = useTranslation('home')
@@ -37,14 +46,26 @@ export function OfferCard({ offer }: { offer: Offer }) {
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
       style={{ transform: prefersReducedMotion ? undefined : transform }}
-      className="from-primary-600 to-secondary-700 relative [width:min(80vw,320px)] shrink-0 snap-start overflow-hidden rounded-2xl bg-gradient-to-br p-6 text-white shadow-lg"
+      className="relative h-80 [width:min(80vw,320px)] shrink-0 snap-start overflow-hidden rounded-2xl shadow-lg"
     >
-      <span className="absolute -end-6 -top-6 flex size-24 items-center justify-center rounded-full bg-white/10 text-2xl font-extrabold">
+      <img
+        src={imageByOffer[offer.image]}
+        alt=""
+        aria-hidden
+        className="absolute inset-0 size-full object-cover"
+        loading="lazy"
+      />
+      <div className="via-secondary-700/60 from-secondary-700 absolute inset-0 bg-gradient-to-t to-black/10" />
+
+      <span className="from-accent-500 to-hope-500 absolute end-4 top-4 flex size-16 items-center justify-center rounded-full bg-gradient-to-br text-lg font-extrabold text-white shadow-lg ring-2 ring-white/40">
         {offer.discountLabel}
       </span>
-      <Tag className="text-accent-500 mb-4 size-8" aria-hidden />
-      <h3 className="text-lg font-bold">{t(offer.title)}</h3>
-      <p className="mt-2 text-sm text-white/80">{t(offer.description)}</p>
+
+      <div className="absolute inset-x-0 bottom-0 p-6">
+        <Tag className="text-accent-400 mb-3 size-7" aria-hidden />
+        <h3 className="text-lg font-bold text-white">{t(offer.title)}</h3>
+        <p className="mt-2 text-sm text-white/85">{t(offer.description)}</p>
+      </div>
     </motion.div>
   )
 }

@@ -15,6 +15,7 @@
   },
   "account": {
     "login": "Log In",
+    "logout": "Log Out",
     "favorites": "Favorites",
     "cart": "Cart"
   },
@@ -24,7 +25,9 @@
     "viewAll": "View All",
     "submit": "Submit",
     "close": "Close",
-    "menu": "Menu"
+    "menu": "Menu",
+    "addToFavorites": "Add to favorites",
+    "removeFromFavorites": "Remove from favorites"
   },
   "footer": {
     "tagline": "Training and rehabilitation services for children with developmental disorders — scientific method, human heart.",

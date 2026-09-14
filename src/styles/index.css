@@ -7,15 +7,23 @@
 @import '@fontsource/ibm-plex-sans-arabic/700.css';
 
 @theme {
-  /* Brand: warm teal (calm, trustworthy) + amber/coral accents (warmth, child-centered) */
-  --color-primary-50: #eafafa;
-  --color-primary-100: #dcf2f1;
-  --color-primary-500: #0f8b8d;
-  --color-primary-600: #0d797b;
-  --color-primary-700: #0b6668;
+  /* Brand: "Indigo Pulse" (modern, distinct from category-standard green/teal) + amber/coral accents */
+  --color-primary-50: #eeeefe;
+  --color-primary-100: #e0e1fc;
+  --color-primary-200: #c7c9fa;
+  --color-primary-300: #a5a8f5;
+  --color-primary-400: #7c7ff2;
+  --color-primary-500: #5b5fef;
+  --color-primary-600: #4c4fe0;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #362da0;
+  --color-primary-900: #2a2380;
 
-  --color-secondary-500: #2e5077;
-  --color-secondary-700: #1f3654;
+  --color-secondary-500: #3b3178;
+  --color-secondary-700: #281f52;
+
+  --color-gradient-start: #5b5fef;
+  --color-gradient-end: #8b5cf6;
 
   --color-accent-100: #fdebd6;
   --color-accent-500: #f4a259;
@@ -58,7 +66,6 @@ html[lang='ar'] body {
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {

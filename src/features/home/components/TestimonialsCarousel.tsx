@@ -1,9 +1,10 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { Quote } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { Testimonial } from '@/features/home/home.types'
 import { AnimatedSection } from '@/shared/components/composed/AnimatedSection'
+import { Avatar } from '@/shared/components/composed/Avatar'
 import { SectionHeading } from '@/shared/components/composed/SectionHeading'
 import { RatingStars } from '@/shared/components/ui'
 import { useDirection } from '@/shared/hooks/useDirection'
@@ -42,7 +43,7 @@ export function TestimonialsCarousel({ testimonials }: { testimonials: Testimoni
   const physicalForward = isRtl ? -forward : forward
 
   return (
-    <AnimatedSection className="bg-white py-20">
+    <AnimatedSection className="bg-white/50 py-20 backdrop-blur-sm">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <SectionHeading
           align="center"
@@ -55,6 +56,35 @@ export function TestimonialsCarousel({ testimonials }: { testimonials: Testimoni
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
+          {count > 1 && (
+            <>
+              <button
+                type="button"
+                aria-label={t('testimonials.previous')}
+                onClick={() => paginate(-1)}
+                className="hover:text-primary-700 hover:ring-primary-200 absolute start-0 top-1/2 z-10 flex size-10 -translate-x-2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-neutral-600 shadow-md ring-1 ring-neutral-200 transition sm:-start-4 rtl:translate-x-2"
+              >
+                {isRtl ? (
+                  <ChevronRight className="size-5" aria-hidden />
+                ) : (
+                  <ChevronLeft className="size-5" aria-hidden />
+                )}
+              </button>
+              <button
+                type="button"
+                aria-label={t('testimonials.next')}
+                onClick={() => paginate(1)}
+                className="hover:text-primary-700 hover:ring-primary-200 absolute end-0 top-1/2 z-10 flex size-10 translate-x-2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-neutral-600 shadow-md ring-1 ring-neutral-200 transition sm:-end-4 rtl:-translate-x-2"
+              >
+                {isRtl ? (
+                  <ChevronLeft className="size-5" aria-hidden />
+                ) : (
+                  <ChevronRight className="size-5" aria-hidden />
+                )}
+              </button>
+            </>
+          )}
+
           <Quote className="text-primary-200 mx-auto mb-4 size-8" aria-hidden />
 
           <div className="relative min-h-56 overflow-hidden">
@@ -86,11 +116,14 @@ export function TestimonialsCarousel({ testimonials }: { testimonials: Testimoni
                   “{t(current.quote)}”
                 </blockquote>
                 <RatingStars value={current.rating} className="mt-4 justify-center" />
-                <figcaption className="mt-3">
-                  <span className="block font-semibold text-neutral-900">
-                    {t(current.authorName)}
+                <figcaption className="mt-4 flex items-center justify-center gap-3">
+                  <Avatar name={t(current.authorName)} />
+                  <span className="text-start">
+                    <span className="block font-semibold text-neutral-900">
+                      {t(current.authorName)}
+                    </span>
+                    <span className="text-sm text-neutral-400">{t(current.authorRole)}</span>
                   </span>
-                  <span className="text-sm text-neutral-400">{t(current.authorRole)}</span>
                 </figcaption>
               </motion.figure>
             </AnimatePresence>

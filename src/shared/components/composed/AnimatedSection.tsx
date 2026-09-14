@@ -8,6 +8,7 @@ interface AnimatedSectionProps {
   className?: string
   delay?: number
   as?: 'section' | 'div'
+  id?: string
 }
 
 export function AnimatedSection({
@@ -15,6 +16,7 @@ export function AnimatedSection({
   className,
   delay = 0,
   as = 'section',
+  id,
 }: AnimatedSectionProps) {
   const { ref, isInView } = useScrollReveal()
   const prefersReducedMotion = useReducedMotion()
@@ -23,6 +25,7 @@ export function AnimatedSection({
   return (
     <Component
       ref={ref}
+      id={id}
       className={cn(className)}
       initial={prefersReducedMotion ? undefined : { opacity: 0, y: 32 }}
       animate={isInView ? { opacity: 1, y: 0 } : undefined}

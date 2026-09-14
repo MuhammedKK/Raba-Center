@@ -1,0 +1,71 @@
+{
+  "list": {
+    "eyebrow": "From our blog",
+    "title": "Insights on child development and therapy",
+    "empty": "No articles in this category yet."
+  },
+  "filter": {
+    "label": "Filter by topic",
+    "all": "All topics",
+    "earlyIntervention": "Early Intervention",
+    "speechLanguage": "Speech & Language",
+    "sensoryPlay": "Sensory Play",
+    "parenting": "Parenting"
+  },
+  "readTime_one": "{{count}} min read",
+  "readTime_other": "{{count}} min read",
+  "viewCount": "{{formatted}} views",
+  "detail": {
+    "notFound": "This article couldn't be found.",
+    "relatedPosts": "Related articles"
+  },
+  "posts": {
+    "earlyIntervention": {
+      "title": "Why Early Intervention Matters",
+      "excerpt": "The first years of a child's life offer a critical window for developmental support — here's why acting early makes such a measurable difference.",
+      "body": {
+        "h1": "A critical window for the developing brain",
+        "p1": "Research consistently shows that a child's brain is most adaptable in the first few years of life. Starting therapy during this window — rather than waiting for a child to \"grow out of it\" — gives interventions far more room to reshape developmental trajectories.",
+        "caption1": "A parent and child building early language skills together at home.",
+        "p2": "Early intervention isn't just about therapy sessions at a center. It's about equipping families with strategies they can use every day, turning ordinary moments — mealtime, bath time, play — into opportunities for growth.",
+        "quote1": "The earlier we start, the more a child's daily environment becomes part of the treatment plan, not separate from it.",
+        "quoteAttribution": "Dr. Lama Al-Harbi, Clinical Director",
+        "p3": "If you've noticed a developmental delay, however small, the most helpful next step is a professional assessment — not waiting to see if it resolves on its own."
+      }
+    },
+    "speechMilestones": {
+      "title": "Speech & Language Milestones: What to Expect",
+      "excerpt": "A practical guide to the language milestones most children reach by certain ages, and when it's worth asking a specialist for guidance.",
+      "body": {
+        "h1": "What typical language development looks like",
+        "p1": "By 12 months, most children say their first words. By 2 years, simple two-word phrases. By 3, short sentences. These are general guideposts, not strict deadlines — every child develops at their own pace.",
+        "p2": "What matters more than hitting an exact age is the overall trend: is a child's communication steadily expanding, or has it plateaued for several months?",
+        "caption1": "A specialist working through communication exercises during a session.",
+        "p3": "If a child isn't combining words by age 2, or their speech is difficult for family members to understand by age 3, a speech and language evaluation can identify exactly where extra support would help most."
+      }
+    },
+    "sensoryPlay": {
+      "title": "The Power of Sensory Play at Home",
+      "excerpt": "Simple, low-cost sensory activities parents can set up at home to support a child's developmental progress between therapy sessions.",
+      "body": {
+        "h1": "Why sensory input matters for development",
+        "p1": "Sensory play — activities involving touch, movement, sound, and texture — helps children build the neural pathways behind attention, self-regulation, and fine motor skills.",
+        "caption1": "Sorting colorful wooden blocks together builds focus and fine motor coordination.",
+        "p2": "You don't need special equipment: sorting blocks by color, digging through a bin of rice or beans, or simply stacking cups all count as meaningful sensory practice.",
+        "quote1": "The best sensory activities are the ones a child wants to repeat — repetition is where the real learning happens.",
+        "quoteAttribution": "Yousef Al-Otaibi, Occupational Therapist"
+      }
+    },
+    "familyReading": {
+      "title": "Building Language Through Everyday Reading",
+      "excerpt": "Reading together isn't just a bedtime routine — it's one of the most effective, evidence-backed ways to build a child's vocabulary and communication skills.",
+      "body": {
+        "h1": "More than a bedtime habit",
+        "p1": "Shared reading exposes children to far more vocabulary than everyday conversation alone, and the back-and-forth of pointing, naming, and asking questions builds early communication skills long before a child can read themselves.",
+        "p2": "It doesn't need to be a long book or a quiet moment — reading in short bursts, anywhere, still counts. What matters is consistency and genuine engagement, not perfect conditions.",
+        "caption1": "A few minutes of shared reading, wherever you are, adds up over time.",
+        "p3": "Try narrating what's happening on the page, pausing to let your child predict what comes next, and following their interest even if it means skipping pages."
+      }
+    }
+  }
+}

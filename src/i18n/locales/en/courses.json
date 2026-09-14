@@ -6,5 +6,74 @@
     "speechFoundations": "Speech & Language Foundations"
   },
   "duration_one": "{{count}} hour",
-  "duration_other": "{{count}} hours"
+  "duration_other": "{{count}} hours",
+  "list": {
+    "eyebrow": "Programs & courses",
+    "title": "Certification programs for every specialization",
+    "empty": "No programs match these filters yet."
+  },
+  "filters": {
+    "category": {
+      "label": "Category",
+      "all": "All programs",
+      "aba": "ABA",
+      "speech": "Speech & language"
+    },
+    "price": {
+      "label": "Max price",
+      "options": {
+        "any": "Any price",
+        "500": "Up to SAR 500",
+        "1500": "Up to SAR 1,500",
+        "6000": "Up to SAR 6,000"
+      }
+    }
+  },
+  "trainer": {
+    "label": "Instructor"
+  },
+  "detail": {
+    "curriculum": "What you'll learn",
+    "enroll": "Enroll Now",
+    "enrollSuccess": "Added to your cart — complete checkout to finish enrolling.",
+    "notFound": "This program couldn't be found."
+  },
+  "details": {
+    "abaTechnician": {
+      "description": "A hands-on certification track for aspiring ABA technicians, covering core behavior-analysis principles and supervised practical sessions.",
+      "curriculum": {
+        "module1": "Foundations of applied behavior analysis",
+        "module2": "Data collection and progress tracking",
+        "module3": "Behavior reduction and skill-building techniques",
+        "module4": "Supervised practicum with real case studies"
+      }
+    },
+    "autismSupervisor": {
+      "description": "An advanced program for professionals ready to supervise ABA programs and mentor technicians across a caseload of clients.",
+      "curriculum": {
+        "module1": "Program design and individualized treatment planning",
+        "module2": "Clinical supervision and staff mentorship",
+        "module3": "Outcome measurement and program evaluation",
+        "module4": "Ethics and family collaboration"
+      }
+    },
+    "behaviorSpecialist": {
+      "description": "Our most advanced certification, preparing specialists to lead complex behavior-analysis cases and clinical decision-making.",
+      "curriculum": {
+        "module1": "Advanced functional behavior assessment",
+        "module2": "Complex case formulation",
+        "module3": "Clinical leadership and interdisciplinary coordination",
+        "module4": "Research-informed practice and outcome reporting"
+      }
+    },
+    "speechFoundations": {
+      "description": "A foundational program in speech and language therapy techniques for children with developmental communication delays.",
+      "curriculum": {
+        "module1": "Language development milestones",
+        "module2": "Articulation and phonology techniques",
+        "module3": "Play-based communication therapy",
+        "module4": "Family coaching for at-home practice"
+      }
+    }
+  }
 }

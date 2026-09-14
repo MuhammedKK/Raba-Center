@@ -9,6 +9,10 @@
       "assessment": "Individual scientific diagnosis & assessment",
       "intervention": "Certified ABA intervention programs",
       "support": "Psychological support & family counseling"
+    },
+    "floatingStat": {
+      "value": "5,000+",
+      "label": "Children supported"
     }
   },
   "credentials": {
@@ -44,6 +48,8 @@
   "testimonials": {
     "eyebrow": "Families we've supported",
     "title": "What parents are saying",
+    "previous": "Previous testimonial",
+    "next": "Next testimonial",
     "items": {
       "t1": {
         "name": "Sara A.",

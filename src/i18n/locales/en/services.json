@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "eyebrow": "What we offer",
+    "title": "Specialized therapy services for every stage of development",
+    "subtitle": "From diagnosis to daily support, every service is delivered by certified specialists and tailored to your child's individual needs."
+  },
+  "grid": {
+    "eyebrow": "Our services",
+    "title": "A complete path, from assessment to daily support"
+  },
+  "cta": {
+    "label": "Inquire about this service"
+  },
+  "items": {
+    "aba": {
+      "title": "ABA Therapy",
+      "description": "Certified applied behavior analysis programs that build communication, social, and daily-living skills through individualized, measurable plans."
+    },
+    "speech": {
+      "title": "Speech & Language Therapy",
+      "description": "One-on-one sessions targeting expressive and receptive language delays, articulation, and functional communication."
+    },
+    "assessment": {
+      "title": "Assessment & Diagnosis",
+      "description": "Comprehensive developmental evaluations that give families a clear, scientific starting point and a personalized treatment roadmap."
+    },
+    "home": {
+      "title": "Home Services",
+      "description": "In-home therapy sessions that bring certified specialists into your child's natural environment for real-world skill generalization."
+    },
+    "shadow": {
+      "title": "Shadow Teacher Support",
+      "description": "Dedicated classroom support that helps children with developmental needs thrive alongside their peers in mainstream schools."
+    },
+    "branches": {
+      "title": "Branches Near You",
+      "description": "Multiple center locations with consistent, certified care — find the branch closest to your family."
+    }
+  },
+  "banner": {
+    "title": "Not sure which service fits your child?",
+    "subtitle": "Book a free initial assessment and our specialists will recommend the right program for your family.",
+    "cta": "Book a Free Assessment"
+  }
+}

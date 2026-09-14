@@ -1,5 +1,6 @@
 import { Navigate, createBrowserRouter } from 'react-router'
 import { routePaths } from './routePaths'
+import { AuthGuard } from '@/features/auth/components/AuthGuard'
 import AboutPage from '@/pages/AboutPage'
 import BlogDetailPage from '@/pages/BlogDetailPage'
 import BlogListPage from '@/pages/BlogListPage'
@@ -14,6 +15,7 @@ import HomePage from '@/pages/HomePage'
 import LoginPage from '@/pages/LoginPage'
 import NotFoundPage from '@/pages/NotFoundPage'
 import ServicesPage from '@/pages/ServicesPage'
+import TrainerDetailPage from '@/pages/TrainerDetailPage'
 import TrainersPage from '@/pages/TrainersPage'
 import { AccountLayout } from '@/shared/layouts/AccountLayout'
 import { MainLayout } from '@/shared/layouts/MainLayout'
@@ -30,6 +32,7 @@ export const router = createBrowserRouter([
       { path: routePaths.courses, element: <CoursesListPage /> },
       { path: routePaths.courseDetail(), element: <CourseDetailPage /> },
       { path: routePaths.trainers, element: <TrainersPage /> },
+      { path: routePaths.trainerDetail(), element: <TrainerDetailPage /> },
       { path: routePaths.branches, element: <BranchesPage /> },
       { path: routePaths.blog, element: <BlogListPage /> },
       { path: routePaths.blogDetail(), element: <BlogDetailPage /> },
@@ -39,8 +42,22 @@ export const router = createBrowserRouter([
         element: <AccountLayout />,
         children: [
           { path: routePaths.favorites, element: <FavoritesPage /> },
-          { path: routePaths.cart, element: <CartPage /> },
-          { path: routePaths.checkout, element: <CheckoutPage /> },
+          {
+            path: routePaths.cart,
+            element: (
+              <AuthGuard>
+                <CartPage />
+              </AuthGuard>
+            ),
+          },
+          {
+            path: routePaths.checkout,
+            element: (
+              <AuthGuard>
+                <CheckoutPage />
+              </AuthGuard>
+            ),
+          },
         ],
       },
       { path: '*', element: <NotFoundPage /> },

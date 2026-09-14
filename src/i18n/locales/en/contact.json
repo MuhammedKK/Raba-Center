@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "eyebrow": "Get in touch",
+    "title": "We're here to help your family take the next step"
+  },
+  "tabs": {
+    "inquiry": "General Inquiry",
+    "homeService": "Home Service Request",
+    "shadowTeacher": "Shadow Teacher Request"
+  },
+  "fields": {
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "Phone number",
+    "message": "Message",
+    "address": "Home address",
+    "notes": "Additional notes (optional)",
+    "schoolName": "School name",
+    "childAge": "Child's age"
+  },
+  "errors": {
+    "nameRequired": "Please enter your full name.",
+    "emailInvalid": "Please enter a valid email address.",
+    "phoneInvalid": "Please enter a valid phone number.",
+    "messageTooShort": "Please share a few more details (at least 10 characters).",
+    "addressRequired": "Please enter your home address.",
+    "notesTooLong": "Notes must be 500 characters or fewer.",
+    "schoolNameRequired": "Please enter your child's school name.",
+    "childAgeInvalid": "Please enter a valid age between 2 and 18."
+  },
+  "actions": {
+    "submit": "Send Request"
+  },
+  "success": {
+    "title": "Thank you — we've received your request",
+    "subtitle": "Our team will reach out within 1–2 business days.",
+    "sendAnother": "Send another request"
+  },
+  "info": {
+    "title": "Contact information",
+    "address": "Riyadh, Saudi Arabia",
+    "whatsapp": "Chat on WhatsApp",
+    "whatsappMessage": "Hello, I'd like to ask about your services."
+  }
+}

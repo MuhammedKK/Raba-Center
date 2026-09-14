@@ -13,7 +13,7 @@ export function AccreditationsSection({ accreditations }: { accreditations: Accr
   if (accreditations.length === 0) return null
 
   return (
-    <AnimatedSection className="bg-neutral-50 py-20">
+    <AnimatedSection className="bg-neutral-50/50 py-20 backdrop-blur-sm">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           align="center"

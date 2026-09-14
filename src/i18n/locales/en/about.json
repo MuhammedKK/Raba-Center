@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "eyebrow": "About Amal Care",
+    "title": "A scientific method with a human heart",
+    "subtitle": "For over a decade, Amal Care has combined certified applied behavior analysis, speech therapy, and family-centered support to help children with developmental disorders build real, lasting skills."
+  },
+  "mission": {
+    "missionTitle": "Our mission",
+    "missionText": "To give every child access to evidence-based developmental therapy delivered with dignity, and to equip families with the tools to support progress at home, not just in the clinic.",
+    "visionTitle": "Our vision",
+    "visionText": "A region where a developmental diagnosis is met with a clear path forward, not uncertainty — where specialized care is close, affordable, and genuinely effective."
+  },
+  "stats": {
+    "eyebrow": "Our track record",
+    "title": "Numbers families trust",
+    "satisfaction": "Parent satisfaction",
+    "effectiveness": "Program effectiveness",
+    "improvement": "Child improvement rate"
+  },
+  "team": {
+    "eyebrow": "Meet the specialists",
+    "title": "The team behind every treatment plan",
+    "readBio": "Read full bio",
+    "members": {
+      "lead": {
+        "name": "Dr. Lama Al-Harbi",
+        "role": "Clinical Director",
+        "credentials": "BCBA-D, Ph.D. Applied Behavior Analysis",
+        "specialty": "Program design & clinical supervision",
+        "bio": "Dr. Lama has led applied behavior analysis programs for over 14 years, designing individualized treatment plans and supervising the center's clinical team to make sure every program stays evidence-based and measurable."
+      },
+      "behavior": {
+        "name": "Omar Al-Sayed",
+        "role": "Senior Behavior Analyst",
+        "credentials": "BCBA, M.Sc. Applied Behavior Analysis",
+        "specialty": "Autism spectrum & behavior intervention",
+        "bio": "Omar specializes in functional behavior assessment and early-intervention ABA programs, working closely with families to translate clinical progress into everyday routines at home."
+      },
+      "speech": {
+        "name": "Hind Al-Qahtani",
+        "role": "Speech & Language Therapist",
+        "credentials": "M.Sc. Speech-Language Pathology",
+        "specialty": "Language delay & communication development",
+        "bio": "Hind works with children on expressive and receptive language delays, using play-based therapy techniques that keep sessions engaging while building measurable communication milestones."
+      },
+      "occupational": {
+        "name": "Yousef Al-Otaibi",
+        "role": "Occupational Therapist",
+        "credentials": "OTR, B.Sc. Occupational Therapy",
+        "specialty": "Sensory integration & fine motor skills",
+        "bio": "Yousef focuses on sensory processing and fine motor development, helping children build the physical foundations they need for daily independence and classroom readiness."
+      }
+    }
+  },
+  "values": {
+    "eyebrow": "What guides us",
+    "title": "Certifications & values",
+    "items": {
+      "evidence": {
+        "title": "Evidence-based practice",
+        "description": "Every program is built on peer-reviewed methods and tracked with measurable outcomes, not guesswork."
+      },
+      "family": {
+        "title": "Family-centered care",
+        "description": "Parents are treated as partners in treatment, with regular updates and take-home strategies, not passive observers."
+      },
+      "compassion": {
+        "title": "Compassionate service",
+        "description": "Every child is met with patience and respect for their pace — clinical rigor never comes at the cost of warmth."
+      },
+      "growth": {
+        "title": "Continuous growth",
+        "description": "Our specialists pursue ongoing certification and training so our methods keep pace with the latest research."
+      }
+    }
+  }
+}

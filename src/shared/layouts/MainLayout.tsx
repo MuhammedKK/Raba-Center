@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Navigate, Outlet, useParams } from 'react-router'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
+import { AmbientBackground } from '@/shared/components/composed/AmbientBackground'
 import { PageTransition } from '@/shared/components/composed/PageTransition'
 import type { Locale } from '@/types/common.types'
 
@@ -23,7 +24,8 @@ export function MainLayout() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="isolate flex min-h-screen flex-col">
+      <AmbientBackground />
       <Header />
       <main className="flex-1">
         <PageTransition>

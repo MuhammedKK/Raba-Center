@@ -3,6 +3,7 @@ export interface Offer {
   title: string
   description: string
   discountLabel: string
+  image: 'aba' | 'homeServices' | 'trainingBundle'
 }
 
 export interface Testimonial {
