@@ -4,6 +4,10 @@
     "title": "Certified specialists behind every program"
   },
   "viewProfile": "View profile",
+  "card": {
+    "topRated": "Top rated",
+    "experienceLabel": "Years exp."
+  },
   "wave": {
     "previous": "Previous trainer",
     "next": "Next trainer"

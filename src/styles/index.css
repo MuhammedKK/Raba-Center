@@ -1,10 +1,14 @@
 @import 'tailwindcss';
-@import '@fontsource-variable/sora';
-@import '@fontsource-variable/inter';
-@import '@fontsource/ibm-plex-sans-arabic/400.css';
-@import '@fontsource/ibm-plex-sans-arabic/500.css';
-@import '@fontsource/ibm-plex-sans-arabic/600.css';
-@import '@fontsource/ibm-plex-sans-arabic/700.css';
+/* Almarai — single primary typeface for the whole site. Ships matched Arabic +
+   Latin subsets, so RTL and LTR copy share one family (weights: 300/400/700/800). */
+@import '@fontsource/almarai/300.css';
+@import '@fontsource/almarai/400.css';
+@import '@fontsource/almarai/700.css';
+@import '@fontsource/almarai/800.css';
+@import '@fontsource/almarai/arabic-300.css';
+@import '@fontsource/almarai/arabic-400.css';
+@import '@fontsource/almarai/arabic-700.css';
+@import '@fontsource/almarai/arabic-800.css';
 
 /* Class-based dark mode (Tailwind v4 defaults to prefers-color-scheme only) */
 @custom-variant dark (&:where(.dark, .dark *));
@@ -45,16 +49,31 @@
   --color-neutral-800: #16222f;
   --color-neutral-950: #0a1929;
 
+  /* Trainer-card palette, taken from the approved card reference: forest-green
+     CTA, teal specialty label, and warm cream chips for the rating/top-rated. */
+  --color-card-accent: #0e6e5b;
+  --color-card-accent-soft: #6fd3bb;
+  --color-card-cta: #14543f;
+  --color-card-cta-hover: #0f4433;
+  --color-card-chip: #f4eee1;
+  --color-card-badge: #fbf1d9;
+  --color-card-badge-text: #6b5b23;
+  --color-card-star: #f2a93b;
+
   --color-success-500: #22a06b;
   --color-warning-500: #e9a23b;
   --color-danger-500: #e4574c;
   --color-info-500: #3b82c4;
 
-  /* Typography */
-  --font-heading-latin: 'Sora Variable', system-ui, sans-serif;
-  --font-heading-arabic: 'IBM Plex Sans Arabic', system-ui, sans-serif;
-  --font-body-latin: 'Inter Variable', system-ui, sans-serif;
-  --font-body-arabic: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  /* Typography — Almarai everywhere, Arabic and Latin alike. */
+  --font-almarai: 'Almarai', system-ui, sans-serif;
+  --font-heading-latin: var(--font-almarai);
+  --font-heading-arabic: var(--font-almarai);
+  --font-body-latin: var(--font-almarai);
+  --font-body-arabic: var(--font-almarai);
+  /* Tailwind's `font-sans` utility resolves here too, so any component using it
+     (or inheriting from body) picks up Almarai without a per-component override. */
+  --font-sans: var(--font-almarai);
 }
 
 html {
@@ -67,29 +86,27 @@ html.dark {
 
 body {
   @apply bg-neutral-50 text-neutral-700 antialiased dark:bg-neutral-950 dark:text-neutral-300;
-  font-family: var(--font-body-latin);
-}
-
-html[lang='ar'] body {
-  font-family: var(--font-body-arabic);
+  font-family: var(--font-almarai);
 }
 
 h1,
 h2,
+h3,
 h4,
 h5,
 h6 {
   @apply text-neutral-900 dark:text-neutral-50;
-  font-family: var(--font-heading-latin);
+  font-family: var(--font-almarai);
 }
 
-html[lang='ar'] h1,
-html[lang='ar'] h2,
-html[lang='ar'] h3,
-html[lang='ar'] h4,
-html[lang='ar'] h5,
-html[lang='ar'] h6 {
-  font-family: var(--font-heading-arabic);
+/* Form controls don't inherit font-family by default in every engine — pin them
+   explicitly so buttons, inputs and dialogs can't fall back to a system face. */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
 }
 
 @keyframes marquee {

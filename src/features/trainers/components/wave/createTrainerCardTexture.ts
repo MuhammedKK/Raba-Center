@@ -62,11 +62,11 @@ export function createTrainerCardTexture(
 
   ctx.textAlign = 'center'
   ctx.fillStyle = isDark ? '#fafafa' : '#171717'
-  ctx.font = '700 40px "IBM Plex Sans Arabic", "Sora", system-ui, sans-serif'
+  ctx.font = '700 40px "Almarai", system-ui, sans-serif'
   ctx.fillText(name, WIDTH / 2, panelTop + 66, WIDTH - 48)
 
   ctx.fillStyle = '#5b5fef'
-  ctx.font = '600 30px "IBM Plex Sans Arabic", "Inter", system-ui, sans-serif'
+  ctx.font = '700 30px "Almarai", system-ui, sans-serif'
   ctx.fillText(role, WIDTH / 2, panelTop + 118, WIDTH - 48)
 
   const texture = new THREE.CanvasTexture(canvas)
