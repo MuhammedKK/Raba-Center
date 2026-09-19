@@ -6,7 +6,8 @@
   "viewProfile": "عرض الملف",
   "card": {
     "topRated": "الأعلى تقييمًا",
-    "experienceLabel": "سنوات الخبرة"
+    "experienceLabel": "سنوات الخبرة",
+    "verified": "مؤهلات موثّقة"
   },
   "wave": {
     "previous": "المدرب السابق",
