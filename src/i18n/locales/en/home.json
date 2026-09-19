@@ -83,5 +83,17 @@
   "accreditations": {
     "eyebrow": "Recognized by",
     "title": "Accreditations & partnerships"
+  },
+  "recognized": {
+    "eyebrow": "Accreditations & certifications",
+    "title": "Recognized By",
+    "items": {
+      "cbahi": "Saudi Central Board for Accreditation of Healthcare Institutions (CBAHI)",
+      "councilOfHealthInsurance": "Council of Health Insurance",
+      "bacb": "Behavior Analyst Certification Board (BACB)",
+      "qaba": "QABA — Behavioral Health Credentialing",
+      "ibao": "IBAO",
+      "iso": "ISO"
+    }
   }
 }
