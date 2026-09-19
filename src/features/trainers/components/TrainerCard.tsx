@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
-import { Award, Star } from 'lucide-react'
+import { BadgeCheck, Star } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link, useParams } from 'react-router'
-import ahmedImage from '@/assets/images/trainers/ahmed-abu-zaid.png'
-import dohaImage from '@/assets/images/trainers/doha-khaled.png'
+import ahmedImage from '@/assets/images/trainers/ahmed-abu-zaid.jpeg'
+import dohaImage from '@/assets/images/trainers/doha-khaled.jpeg'
 import hanaaImage from '@/assets/images/trainers/hanaa-bashir.png'
 import hishamImage from '@/assets/images/trainers/hisham-salama.png'
 import type { Trainer } from '@/features/trainers/trainers.types'
@@ -79,7 +79,7 @@ export function TrainerCard({ trainer }: { trainer: Trainer }) {
 
           {trainer.qualifications && (
             <p className="mt-2 flex items-start gap-1.5 text-sm text-neutral-500 dark:text-neutral-400">
-              <Award className="mt-0.5 size-4 shrink-0" aria-hidden />
+              <BadgeCheck className="mt-0.5 size-4 shrink-0" role="img" aria-label={t('card.verified')} />
               <span className="line-clamp-2">{t(trainer.qualifications)}</span>
             </p>
           )}

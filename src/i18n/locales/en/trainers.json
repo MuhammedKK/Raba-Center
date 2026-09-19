@@ -6,7 +6,8 @@
   "viewProfile": "View profile",
   "card": {
     "topRated": "Top rated",
-    "experienceLabel": "Years exp."
+    "experienceLabel": "Years exp.",
+    "verified": "Verified credentials"
   },
   "wave": {
     "previous": "Previous trainer",
