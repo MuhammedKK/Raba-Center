@@ -1,16 +1,15 @@
-import { AccreditationsSection } from '@/features/home/components/AccreditationsSection'
 import { AccreditationStrip } from '@/features/home/components/AccreditationStrip'
 import { FeaturedCourses } from '@/features/home/components/FeaturedCourses'
 import { HeroSection } from '@/features/home/components/HeroSection'
 import { OffersCarousel } from '@/features/home/components/OffersCarousel'
+import { RecognizedBySection } from '@/features/home/components/RecognizedBySection'
 import { StatsSection } from '@/features/home/components/StatsSection'
 import { TestimonialsCarousel } from '@/features/home/components/TestimonialsCarousel'
 import { TrainersCarousel } from '@/features/home/components/TrainersCarousel'
 import { useHomeData } from '@/features/home/hooks/useHomeData'
 
 export default function HomePage() {
-  const { stats, offers, featuredCourses, testimonials, credentials, accreditations, trainers } =
-    useHomeData()
+  const { stats, offers, featuredCourses, testimonials, credentials, trainers } = useHomeData()
 
   return (
     <div>
@@ -21,7 +20,7 @@ export default function HomePage() {
       <FeaturedCourses courses={featuredCourses} />
       <TrainersCarousel trainers={trainers} />
       <TestimonialsCarousel testimonials={testimonials} />
-      <AccreditationsSection accreditations={accreditations} />
+      <RecognizedBySection />
     </div>
   )
 }

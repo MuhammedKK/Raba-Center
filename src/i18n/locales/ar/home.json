@@ -83,5 +83,17 @@
   "accreditations": {
     "eyebrow": "معترف بنا من",
     "title": "الاعتمادات والشراكات"
+  },
+  "recognized": {
+    "eyebrow": "اعتمادات وشهادات",
+    "title": "معترف بنا من",
+    "items": {
+      "cbahi": "المركز السعودي لاعتماد المنشآت الصحية (CBAHI)",
+      "councilOfHealthInsurance": "مجلس الضمان الصحي",
+      "bacb": "مجلس اعتماد محللي السلوك (BACB)",
+      "qaba": "QABA — الاعتماد المهني للصحة السلوكية",
+      "ibao": "IBAO",
+      "iso": "ISO"
+    }
   }
 }
